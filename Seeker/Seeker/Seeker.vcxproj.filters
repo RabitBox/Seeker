@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="ソース ファイル">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="ヘッダー ファイル">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="リソース ファイル">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Scene">
+      <UniqueIdentifier>{09e362b8-1e66-4c79-974b-c757c62085e0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ApplicationManager">
+      <UniqueIdentifier>{fb3e79ff-b0db-4450-8cbf-818ca15d664f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scene\Demo">
+      <UniqueIdentifier>{866ee30a-2246-432c-8003-43893af79656}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="TinyTim">
+      <UniqueIdentifier>{92f625b5-a01a-402e-a74f-118cdd98aead}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Particle">
+      <UniqueIdentifier>{ef3ff4de-81f0-4b0c-8185-d34f98d5f11f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Particle\Rain">
+      <UniqueIdentifier>{3c6c4f6e-b707-4b64-b65e-f836b1694113}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scene\PlayGame">
+      <UniqueIdentifier>{05836f77-367d-4fba-9d9b-f1cbb771d950}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Floar">
+      <UniqueIdentifier>{b442084f-5301-4d5f-8f98-c17bb1cddffe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Generic">
+      <UniqueIdentifier>{27f136cf-468c-4edf-acc6-3825ec5207dc}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="ApplicationManager.cpp">
+      <Filter>ApplicationManager</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneDemo.cpp">
+      <Filter>Scene\Demo</Filter>
+    </ClCompile>
+    <ClCompile Include="TinyTim.cpp">
+      <Filter>TinyTim</Filter>
+    </ClCompile>
+    <ClCompile Include="ScenePlay.cpp">
+      <Filter>Scene\PlayGame</Filter>
+    </ClCompile>
+    <ClCompile Include="Floar.cpp">
+      <Filter>Floar</Filter>
+    </ClCompile>
+    <ClCompile Include="Generic.cpp">
+      <Filter>Generic</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="ApplicationManager.h">
+      <Filter>ApplicationManager</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneDemo.h">
+      <Filter>Scene\Demo</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneBase.h">
+      <Filter>Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneManager.h">
+      <Filter>Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="InputManager.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="TinyTim.h">
+      <Filter>TinyTim</Filter>
+    </ClInclude>
+    <ClInclude Include="Particle_Rain.h">
+      <Filter>Particle\Rain</Filter>
+    </ClInclude>
+    <ClInclude Include="ScenePlay.h">
+      <Filter>Scene\PlayGame</Filter>
+    </ClInclude>
+    <ClInclude Include="Objects.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Floar.h">
+      <Filter>Floar</Filter>
+    </ClInclude>
+    <ClInclude Include="Generic.h">
+      <Filter>Generic</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
