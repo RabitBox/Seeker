@@ -1,10 +1,13 @@
 #include <iostream>
 #include "DxLib.h"
 #include "ScenePlay.h"
+#include "TinyTim.h"
 
 ScenePlay::ScenePlay()
 {
 	//std::cout << "Play : ƒƒ‚ƒŠ‚ðŠm•Û‚µ‚Ü‚µ‚½" << std::endl;
+	actives.push_back(new TinyTim());
+	active_objects.push_back(std::unique_ptr<Active>(new TinyTim()));
 }
 
 ScenePlay::~ScenePlay()
@@ -28,4 +31,8 @@ void ScenePlay::Draw()
 {
 	DrawString(0, 30, "Play : •`‰æ‚µ‚Ü‚µ‚½", GetColor(255, 255, 255));
 	//std::cout << "Play : •`‰æ‚µ‚Ü‚µ‚½" << std::endl;
+	for (auto& var : active_objects)
+	{
+		var->Draw();
+	}
 }

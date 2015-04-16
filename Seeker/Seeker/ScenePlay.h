@@ -6,8 +6,9 @@
 class ScenePlay : public SceneBace
 {
 private:
-	std::vector <Passive*> passive_objects;
-	std::vector <Active*> active_objects;
+	//std::vector <Passive*> passive_objects;
+	std::vector <Active*> actives;
+	std::vector <std::unique_ptr<Active>> active_objects;
 
 public:
 	ScenePlay();

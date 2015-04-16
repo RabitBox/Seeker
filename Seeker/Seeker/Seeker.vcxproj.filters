@@ -98,5 +98,8 @@
     <ClInclude Include="Generic.h">
       <Filter>Generic</Filter>
     </ClInclude>
+    <ClInclude Include="AnimationBase.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

@@ -94,6 +94,7 @@
     <ClCompile Include="TinyTim.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="AnimationBase.h" />
     <ClInclude Include="ApplicationManager.h" />
     <ClInclude Include="Floar.h" />
     <ClInclude Include="Generic.h" />

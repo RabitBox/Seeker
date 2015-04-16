@@ -3,16 +3,15 @@
 
 enum ObjID
 {
-	Player,	// プレイヤー
-	Floar,	// 床
+	Player,				// プレイヤー
+	Floar,				// 床
+	ParticleEmitter,	// パーティクル生成機
 };
 
 class Passive : public PassiveObject
 {
 protected:
 	ObjID id;
-
-public:
 };
 
 class Active : public ActiveObject

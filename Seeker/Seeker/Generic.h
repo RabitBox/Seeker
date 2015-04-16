@@ -5,6 +5,7 @@
 #pragma once
 #include <stdint.h>
 #include <vector>
+#include <memory>
 
 //======================================================================//
 #define CALL_ONCE(func) do{ static bool _Initialized = false; if (!_Initialized) { func; _Initialized = true; }while(0)
@@ -171,14 +172,18 @@ Vector3 RotationAxisY(const Vector3 &this_position, const Vector3 &center_positi
 Vector3 RotationAxisZ(const Vector3 &this_position, const Vector3 &center_position, const AVector3 &rotation);
 
 //======================================================================//
-struct Particle
+class Particle
 {
+public:
 	Vector3 position;	// 座標
 	AVector3 rotation;	// 回転
 	Vector3 scale;		// サイズ
 	float life_time;	// 生存時間
+
+	virtual void Update(){}
+	virtual void Draw(){}
 };
-struct ParticleEmitter
+struct Emitter
 {
 	Vector3 start_position;		// 初期座標
 	AVector3 start_rotation;	// 初期回転
@@ -195,13 +200,13 @@ public:
 	virtual ~ParticleSystem();
 
 	// function
-	virtual void Emit();				// 生成
-	virtual void Simulate();			// シュミレート
-	virtual void Update();				// 更新
+	virtual void Emit(){}				// 生成
+	virtual void Simulate(){}			// シュミレート
+	virtual void Update(){}				// 更新
 
 protected:
-	std::vector<Particle> particles;	// パーティクル(vector)
-	ParticleEmitter emitter;			// エミッター
+	std::vector<std::unique_ptr<Particle>> particles;	// パーティクル(vector)
+	Emitter emitter;					// エミッター
 	float emission_timer = 0;			// 生成タイマー
 	float frame_duration;				// EmissionTimerの1f毎の上昇数値
 };

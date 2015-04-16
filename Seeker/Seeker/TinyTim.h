@@ -23,6 +23,9 @@ public:
 	TinyTim();
 	virtual ~TinyTim();
 
+	void Update() override {}
+	void Draw() override {}
+
 private:
 	void Walk();	// •à‚­
 	void Run();		// ‘–‚é
