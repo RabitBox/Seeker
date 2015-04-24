@@ -144,10 +144,11 @@ struct Transform
 };
 class PassiveObject
 {
-public:
+protected:
 	// variable
 	Transform transform;
 
+public:
 	// Destructor
 	virtual ~PassiveObject(){}
 

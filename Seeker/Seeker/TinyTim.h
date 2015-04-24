@@ -21,10 +21,11 @@ private:
 
 public:
 	TinyTim();
+	TinyTim(Vector3 _positon);
 	virtual ~TinyTim();
 
-	void Update() override {}
-	void Draw() override {}
+	void Update() override;
+	void Draw() override;
 
 private:
 	void Walk();	// •à‚­

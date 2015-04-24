@@ -15,12 +15,11 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 
 	while (!CheckHitKey(KEY_INPUT_ESCAPE) || ProcessMessage() == -1)
 	{
-		Scene->Input();		// 仮置き
-		Scene->Update();	// 仮置き
-		Scene->Draw();		// 仮置き
-		DrawPixel(320, 240, 0xffff);
+		Scene->Input();					// 仮置き
+		Scene->Update();				// 仮置き
+		Scene->Draw();					// 仮置き
 	}
-	delete Scene;	// 仮置き
+	delete Scene;						// 仮置き
 	DxLib_End();
 	return 0; 
 }

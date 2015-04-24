@@ -40,6 +40,9 @@
     <Filter Include="Generic">
       <UniqueIdentifier>{27f136cf-468c-4edf-acc6-3825ec5207dc}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Animation">
+      <UniqueIdentifier>{7dc064fc-e52b-4b5f-9055-e1058e9d5422}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -99,7 +102,7 @@
       <Filter>Generic</Filter>
     </ClInclude>
     <ClInclude Include="AnimationBase.h">
-      <Filter>ヘッダー ファイル</Filter>
+      <Filter>Animation</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
