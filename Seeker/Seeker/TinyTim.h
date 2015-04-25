@@ -33,4 +33,6 @@ private:
 	void Jump();	// ジャンプ
 	void Land();	// 着地
 	void Roll();	// ローリング
+
+	void DrawPolygon();
 };
