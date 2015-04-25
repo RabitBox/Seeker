@@ -4,6 +4,7 @@
 enum ObjID
 {
 	Player,				// プレイヤー
+	Camera,
 	Floar,				// 床
 	ParticleEmitter,	// パーティクル生成機
 };
@@ -18,4 +19,7 @@ class Active : public ActiveObject
 {
 protected:
 	ObjID id;
+
+public:
+	Vector3 GetPosition(){ return this->transform.position; }
 };

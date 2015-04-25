@@ -25,12 +25,6 @@
     <Filter Include="TinyTim">
       <UniqueIdentifier>{92f625b5-a01a-402e-a74f-118cdd98aead}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Particle">
-      <UniqueIdentifier>{ef3ff4de-81f0-4b0c-8185-d34f98d5f11f}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Particle\Rain">
-      <UniqueIdentifier>{3c6c4f6e-b707-4b64-b65e-f836b1694113}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Scene\PlayGame">
       <UniqueIdentifier>{05836f77-367d-4fba-9d9b-f1cbb771d950}</UniqueIdentifier>
     </Filter>
@@ -42,6 +36,18 @@
     </Filter>
     <Filter Include="Animation">
       <UniqueIdentifier>{7dc064fc-e52b-4b5f-9055-e1058e9d5422}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Camera">
+      <UniqueIdentifier>{bb3d4a94-1063-4f79-9c75-668faff8dd22}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Camera\ScenePlay">
+      <UniqueIdentifier>{7cf623c8-ac36-44da-9c50-5138cc042a61}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Camera\Particle">
+      <UniqueIdentifier>{ef3ff4de-81f0-4b0c-8185-d34f98d5f11f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Camera\Particle\Rain">
+      <UniqueIdentifier>{3c6c4f6e-b707-4b64-b65e-f836b1694113}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -66,6 +72,12 @@
     <ClCompile Include="Generic.cpp">
       <Filter>Generic</Filter>
     </ClCompile>
+    <ClCompile Include="DxRaps.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="CameraPlay.cpp">
+      <Filter>Camera\ScenePlay</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ApplicationManager.h">
@@ -87,7 +99,7 @@
       <Filter>TinyTim</Filter>
     </ClInclude>
     <ClInclude Include="Particle_Rain.h">
-      <Filter>Particle\Rain</Filter>
+      <Filter>Camera\Particle\Rain</Filter>
     </ClInclude>
     <ClInclude Include="ScenePlay.h">
       <Filter>Scene\PlayGame</Filter>
@@ -103,6 +115,12 @@
     </ClInclude>
     <ClInclude Include="AnimationBase.h">
       <Filter>Animation</Filter>
+    </ClInclude>
+    <ClInclude Include="DxRaps.h">
+      <Filter>Scene\PlayGame</Filter>
+    </ClInclude>
+    <ClInclude Include="CameraPlay.h">
+      <Filter>Camera\ScenePlay</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

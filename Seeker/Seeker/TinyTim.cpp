@@ -12,6 +12,7 @@ TinyTim::TinyTim(Vector3 _position)
 	this->transform.position = _position;
 	this->transform.scale = {1.f,1.f,0.1f};
 	this->transform.rotation = { 0.f, 0.f, 0.f };
+	TinyTim();
 }
 
 TinyTim::~TinyTim(){}
@@ -40,4 +41,4 @@ void TinyTim::DrawPolygon()
 	};
 	WORD index[6] = {0,1,2,3,2,1};
 	DrawPolygonIndexed3D(vertex, 4, index, 2, DX_NONE_GRAPH, FALSE);
-}//this->transform.position
+}
