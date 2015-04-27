@@ -23,6 +23,7 @@ void ScenePlay::Input()
 void ScenePlay::Update()
 {
 	DrawString(0, 15, "Play : çXêVÇµÇ‹ÇµÇΩ", GetColor(255, 255, 255));
+	SetCameraPositionAndTarget_UpVecY(VGet(0.f, 0.f, -100.f), VGet(0.f, 0.f, 0.f));
 }
 
 void ScenePlay::Draw()

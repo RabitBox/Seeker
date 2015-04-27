@@ -34,10 +34,10 @@ void TinyTim::DrawPolygon()
 	float y = this->transform.position.y;
 	float z = this->transform.position.z;
 	VERTEX3D vertex[4] = { 
-		{ VGet(x - 30.f, y - 30.f, z), VGet(0.f, 0.f, -1.f), GetColorU8(0.f, 255.f, 255.f, 255.f), GetColorU8(0.f, 0.f, 0.f, 0.f), 0.f, 0.f, 0.f, 0.f },
-		{ VGet(x - 30.f, y + 30.f, z), VGet(0.f, 0.f, -1.f), GetColorU8(0.f, 255.f, 255.f, 0.f), GetColorU8(0.f, 0.f, 0.f, 0.f), 0.f, 0.f, 0.f, 0.f },
-		{ VGet(x + 30.f, y - 30.f, z), VGet(0.f, 0.f, -1.f), GetColorU8(0.f, 255.f, 0.f, 255.f), GetColorU8(0.f, 0.f, 0.f, 0.f), 0.f, 0.f, 0.f, 0.f },
-		{ VGet(x + 30.f, y + 30.f, z), VGet(0.f, 0.f, -1.f), GetColorU8(0.f, 0.f, 255.f, 255.f), GetColorU8(0.f, 0.f, 0.f, 0.f), 0.f, 0.f, 0.f, 0.f }
+		{ VGet(x - 10.f, y - 10.f, z), VGet(0.f, 0.f, -1.f), GetColorU8(0.f, 255.f, 255.f, 255.f), GetColorU8(0.f, 0.f, 0.f, 0.f), 0.f, 0.f, 0.f, 0.f },
+		{ VGet(x - 10.f, y + 10.f, z), VGet(0.f, 0.f, -1.f), GetColorU8(0.f, 255.f, 255.f, 0.f), GetColorU8(0.f, 0.f, 0.f, 0.f), 0.f, 0.f, 0.f, 0.f },
+		{ VGet(x + 10.f, y - 10.f, z), VGet(0.f, 0.f, -1.f), GetColorU8(0.f, 255.f, 0.f, 255.f), GetColorU8(0.f, 0.f, 0.f, 0.f), 0.f, 0.f, 0.f, 0.f },
+		{ VGet(x + 10.f, y + 10.f, z), VGet(0.f, 0.f, -1.f), GetColorU8(0.f, 0.f, 255.f, 255.f), GetColorU8(0.f, 0.f, 0.f, 0.f), 0.f, 0.f, 0.f, 0.f }
 	};
 	WORD index[6] = {0,1,2,3,2,1};
 	DrawPolygonIndexed3D(vertex, 4, index, 2, DX_NONE_GRAPH, FALSE);
