@@ -6,16 +6,15 @@ enum ObjID
 	Player,				// プレイヤー
 	Camera,
 	Floar,				// 床
-	ParticleEmitter,	// パーティクル生成機
 };
 
-class Passive : public PassiveObject
+class Passive : public Object
 {
 protected:
 	ObjID id;
 };
 
-class Active : public ActiveObject
+class Active : public Object
 {
 protected:
 	ObjID id;

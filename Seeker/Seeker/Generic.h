@@ -142,7 +142,7 @@ struct Transform
 	AVector3 rotation;
 	Vector3 scale;
 };
-class PassiveObject
+class Object
 {
 protected:
 	// variable
@@ -150,22 +150,17 @@ protected:
 
 public:
 	// Destructor
-	virtual ~PassiveObject(){}
+	virtual ~Object(){}
 
 	// function
 	virtual void Update() = 0;
 	virtual void Draw() = 0;
 };
-class ActiveObject : public PassiveObject
+
+template<class T>class Singleton
 {
-public:
-	// variable
-	//Vector3 velocity;
-
-	// Destructor
-	virtual ~ActiveObject(){}
+	//http://cflat-inc.hatenablog.com/entry/2014/03/04/214608
 };
-
 //======================================================================//
 Vector3 Rotation3D(const Vector3 &this_position, const Vector3 &center_position, const AVector3 &rotation);
 Vector3 RotationAxisX(const Vector3 &this_position, const Vector3 &center_position, const AVector3 &rotation);

@@ -49,6 +49,15 @@
     <Filter Include="Camera\Particle\Rain">
       <UniqueIdentifier>{3c6c4f6e-b707-4b64-b65e-f836b1694113}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Input">
+      <UniqueIdentifier>{77f4d637-ebc6-4d1a-81fd-c755befbe47d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Input\Demo">
+      <UniqueIdentifier>{532c15b2-ab2d-4cab-8ed1-1609a11b3fa4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Input\Base">
+      <UniqueIdentifier>{8c6109a5-4f7d-4c3c-a664-a742da52a436}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -78,6 +87,9 @@
     <ClCompile Include="CameraPlay.cpp">
       <Filter>Camera\ScenePlay</Filter>
     </ClCompile>
+    <ClCompile Include="InputManagerDemo.cpp">
+      <Filter>Input\Demo</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ApplicationManager.h">
@@ -91,9 +103,6 @@
     </ClInclude>
     <ClInclude Include="SceneManager.h">
       <Filter>Scene</Filter>
-    </ClInclude>
-    <ClInclude Include="InputManager.h">
-      <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
     <ClInclude Include="TinyTim.h">
       <Filter>TinyTim</Filter>
@@ -116,11 +125,17 @@
     <ClInclude Include="AnimationBase.h">
       <Filter>Animation</Filter>
     </ClInclude>
-    <ClInclude Include="DxRaps.h">
-      <Filter>Scene\PlayGame</Filter>
-    </ClInclude>
     <ClInclude Include="CameraPlay.h">
       <Filter>Camera\ScenePlay</Filter>
+    </ClInclude>
+    <ClInclude Include="DxRaps.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="InputManagerDemo.h">
+      <Filter>Input\Demo</Filter>
+    </ClInclude>
+    <ClInclude Include="InputManager.h">
+      <Filter>Input\Base</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

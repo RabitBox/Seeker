@@ -6,20 +6,30 @@ class InputManager
 public:
 	InputManager();
 	virtual ~InputManager();
-
-
 };
 
-enum DirInput
+// •ûŒü‚Ì“ü—Í
+enum ArrowInput
 {
-	NEUTRAL = 0,
-	UP		= 1,
-	DOWN	= 2,
-	LEFT	= 4,
-	RIGHT	= 8,
+	NEUTRAL = 0,	// –³
+	UP		= 1,	// ã
+	DOWN	= 2,	// ‰º
+	LEFT	= 4,	// ¶
+	RIGHT	= 8,	// ‰E
 };
 
-struct InputDatas
+// ƒ{ƒ^ƒ“‚Ì“ü—Í
+enum ButtanInput
 {
+	NONE	= 0,	// –³
+	DOWN	= 1,	// ‰Ÿ‚³‚ê‚½uŠÔ
+	STAY	= 2,	// ‰Ÿ‚³‚ê‚Ä‚¢‚éó‘Ô
+	UP		= 3,	// —£‚ê‚½uŠÔ
+};
 
+struct InputData
+{
+	int Arrow;
+	ButtanInput A;
+	ButtanInput B;
 };
