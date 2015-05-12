@@ -8,15 +8,10 @@ enum ObjID
 	Floar,				// è∞
 };
 
-class Passive : public Object
+class Acter : public Object
 {
 protected:
-	ObjID id;
-};
-
-class Active : public Object
-{
-protected:
+	static int loaded_images;
 	ObjID id;
 
 public:

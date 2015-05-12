@@ -88,7 +88,6 @@
     <ClCompile Include="ApplicationManager.cpp" />
     <ClCompile Include="CameraPlay.cpp" />
     <ClCompile Include="DxRaps.cpp" />
-    <ClCompile Include="Floar.cpp" />
     <ClCompile Include="Generic.cpp" />
     <ClCompile Include="InputManagerDemo.cpp" />
     <ClCompile Include="main.cpp" />
@@ -101,7 +100,6 @@
     <ClInclude Include="ApplicationManager.h" />
     <ClInclude Include="CameraPlay.h" />
     <ClInclude Include="DxRaps.h" />
-    <ClInclude Include="Floar.h" />
     <ClInclude Include="Generic.h" />
     <ClInclude Include="InputManager.h" />
     <ClInclude Include="InputManagerDemo.h" />

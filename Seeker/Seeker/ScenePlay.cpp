@@ -7,7 +7,7 @@ using namespace std;
 ScenePlay::ScenePlay()
 {
 	//std::cout << "Play : ƒƒ‚ƒŠ‚ðŠm•Û‚µ‚Ü‚µ‚½" << std::endl;
-	active_objects.push_back(unique_ptr<Active>(new TinyTim()));
+	active_objects.push_back(unique_ptr<Acter>(new TinyTim()));
 }
 
 ScenePlay::~ScenePlay()

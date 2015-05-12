@@ -6,7 +6,7 @@
 class ScenePlay : public SceneBace
 {
 private:
-	std::vector <std::unique_ptr<Active>> active_objects;
+	std::vector <std::unique_ptr<Acter>> active_objects;
 
 public:
 	ScenePlay();

@@ -14,7 +14,7 @@ enum AnimState
 	Roll,	// ƒ[ƒŠƒ“ƒO
 };
 
-class TinyTim : public Active
+class TinyTim : public Acter
 {
 private:
 	AnimState state;

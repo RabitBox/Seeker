@@ -24,12 +24,12 @@ void TinyTim::Update()
 
 void TinyTim::Draw()
 {
+	DrawString(0, 45, "TinyTim : •`‰æ‚µ‚Ü‚µ‚½", GetColor(255, 255, 255));
 	DrawPolygon();
 }
 
 void TinyTim::DrawPolygon()
 {
-	DrawString(0, 45, "TinyTim : •`‰æ‚µ‚Ü‚µ‚½", GetColor(255, 255, 255));
 	float x = this->transform.position.x;
 	float y = this->transform.position.y;
 	float z = this->transform.position.z;

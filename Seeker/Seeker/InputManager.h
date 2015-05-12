@@ -9,7 +9,7 @@ public:
 };
 
 // •ûŒü‚Ì“ü—Í
-enum ArrowInput
+enum Arrow : int
 {
 	NEUTRAL = 0,	// –³
 	UP		= 1,	// ã
@@ -19,17 +19,17 @@ enum ArrowInput
 };
 
 // ƒ{ƒ^ƒ“‚Ì“ü—Í
-enum ButtanInput
+enum Buttan
 {
 	NONE	= 0,	// –³
-	DOWN	= 1,	// ‰Ÿ‚³‚ê‚½uŠÔ
+	ON		= 1,	// ‰Ÿ‚³‚ê‚½uŠÔ
 	STAY	= 2,	// ‰Ÿ‚³‚ê‚Ä‚¢‚éó‘Ô
-	UP		= 3,	// —£‚ê‚½uŠÔ
+	OUT		= 3,	// —£‚ê‚½uŠÔ
 };
 
 struct InputData
 {
 	int Arrow;
-	ButtanInput A;
-	ButtanInput B;
+	Buttan A;
+	Buttan B;
 };

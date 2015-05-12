@@ -1,3 +1,4 @@
+#pragma once
 #include "InputManager.h"
 
 class InputManagerDemo
@@ -7,8 +8,9 @@ private:
 
 public:
 	InputManagerDemo();
-	virtual ~InputManagerDemo();
+	virtual ~InputManagerDemo(){}
 
 public:
+	void Input();
 	InputData GetInput(){ return this->input_data; }
 };

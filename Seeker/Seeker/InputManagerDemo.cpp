@@ -2,5 +2,10 @@
 
 InputManagerDemo::InputManagerDemo()
 {
-	this->input_data = { ArrowInput::NEUTRAL, ButtanInput::NONE, ButtanInput::NONE };
+	this->input_data = { Arrow::NEUTRAL, Buttan::NONE, Buttan::NONE };
 }
+
+/*void InputManagerDemo::Input()
+{
+	return;
+}//*/

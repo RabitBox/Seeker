@@ -28,9 +28,6 @@
     <Filter Include="Scene\PlayGame">
       <UniqueIdentifier>{05836f77-367d-4fba-9d9b-f1cbb771d950}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Floar">
-      <UniqueIdentifier>{b442084f-5301-4d5f-8f98-c17bb1cddffe}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Generic">
       <UniqueIdentifier>{27f136cf-468c-4edf-acc6-3825ec5207dc}</UniqueIdentifier>
     </Filter>
@@ -75,9 +72,6 @@
     <ClCompile Include="ScenePlay.cpp">
       <Filter>Scene\PlayGame</Filter>
     </ClCompile>
-    <ClCompile Include="Floar.cpp">
-      <Filter>Floar</Filter>
-    </ClCompile>
     <ClCompile Include="Generic.cpp">
       <Filter>Generic</Filter>
     </ClCompile>
@@ -115,9 +109,6 @@
     </ClInclude>
     <ClInclude Include="Objects.h">
       <Filter>ヘッダー ファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="Floar.h">
-      <Filter>Floar</Filter>
     </ClInclude>
     <ClInclude Include="Generic.h">
       <Filter>Generic</Filter>
