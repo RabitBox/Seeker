@@ -55,6 +55,9 @@
     <Filter Include="Input\Base">
       <UniqueIdentifier>{8c6109a5-4f7d-4c3c-a664-a742da52a436}</UniqueIdentifier>
     </Filter>
+    <Filter Include="TextureManager">
+      <UniqueIdentifier>{979692a0-84ec-48ee-8a06-0a66e59f3815}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -127,6 +130,9 @@
     </ClInclude>
     <ClInclude Include="InputManager.h">
       <Filter>Input\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="TextureManager.h">
+      <Filter>TextureManager</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

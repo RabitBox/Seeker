@@ -101,6 +101,7 @@
     <ClInclude Include="CameraPlay.h" />
     <ClInclude Include="DxRaps.h" />
     <ClInclude Include="Generic.h" />
+    <ClInclude Include="TextureManager.h" />
     <ClInclude Include="InputManager.h" />
     <ClInclude Include="InputManagerDemo.h" />
     <ClInclude Include="Objects.h" />
