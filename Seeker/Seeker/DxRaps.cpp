@@ -9,7 +9,7 @@ VECTOR AVGetRap(const AVector3 &vectors)
 	return VGet(vectors.x, vectors.y, vectors.z);
 }
 
-void DrawQuadPolygon(Vector3 scale, Vector3 position, int graph_handle, int trans_flag)
+void DrawQuadPolygon(Vector3 scale, Vector3 position, AVector3 rotation, int graph_handle, int trans_flag)
 {
 	//DrawPolygonIndexed3D(vertex, 4, index, 2, graph_handle, trans_flag);
 	return;

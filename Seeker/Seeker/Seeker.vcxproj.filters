@@ -19,12 +19,6 @@
     <Filter Include="ApplicationManager">
       <UniqueIdentifier>{fb3e79ff-b0db-4450-8cbf-818ca15d664f}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Scene\Demo">
-      <UniqueIdentifier>{866ee30a-2246-432c-8003-43893af79656}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="TinyTim">
-      <UniqueIdentifier>{92f625b5-a01a-402e-a74f-118cdd98aead}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Scene\PlayGame">
       <UniqueIdentifier>{05836f77-367d-4fba-9d9b-f1cbb771d950}</UniqueIdentifier>
     </Filter>
@@ -58,6 +52,15 @@
     <Filter Include="TextureManager">
       <UniqueIdentifier>{979692a0-84ec-48ee-8a06-0a66e59f3815}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Objects">
+      <UniqueIdentifier>{b6757d82-3b73-45a2-83bd-fc3811457c72}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Objects\TinyTim">
+      <UniqueIdentifier>{92f625b5-a01a-402e-a74f-118cdd98aead}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Objects\StoneFloor">
+      <UniqueIdentifier>{e3c703a8-05e8-46d5-b4e2-849ac130afb6}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -66,11 +69,8 @@
     <ClCompile Include="ApplicationManager.cpp">
       <Filter>ApplicationManager</Filter>
     </ClCompile>
-    <ClCompile Include="SceneDemo.cpp">
-      <Filter>Scene\Demo</Filter>
-    </ClCompile>
     <ClCompile Include="TinyTim.cpp">
-      <Filter>TinyTim</Filter>
+      <Filter>Objects\TinyTim</Filter>
     </ClCompile>
     <ClCompile Include="ScenePlay.cpp">
       <Filter>Scene\PlayGame</Filter>
@@ -87,13 +87,13 @@
     <ClCompile Include="InputManagerDemo.cpp">
       <Filter>Input\Demo</Filter>
     </ClCompile>
+    <ClCompile Include="StoneFloor.cpp">
+      <Filter>Objects\StoneFloor</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ApplicationManager.h">
       <Filter>ApplicationManager</Filter>
-    </ClInclude>
-    <ClInclude Include="SceneDemo.h">
-      <Filter>Scene\Demo</Filter>
     </ClInclude>
     <ClInclude Include="SceneBase.h">
       <Filter>Scene</Filter>
@@ -102,16 +102,13 @@
       <Filter>Scene</Filter>
     </ClInclude>
     <ClInclude Include="TinyTim.h">
-      <Filter>TinyTim</Filter>
+      <Filter>Objects\TinyTim</Filter>
     </ClInclude>
     <ClInclude Include="Particle_Rain.h">
       <Filter>Camera\Particle\Rain</Filter>
     </ClInclude>
     <ClInclude Include="ScenePlay.h">
       <Filter>Scene\PlayGame</Filter>
-    </ClInclude>
-    <ClInclude Include="Objects.h">
-      <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
     <ClInclude Include="Generic.h">
       <Filter>Generic</Filter>
@@ -133,6 +130,12 @@
     </ClInclude>
     <ClInclude Include="TextureManager.h">
       <Filter>TextureManager</Filter>
+    </ClInclude>
+    <ClInclude Include="Objects.h">
+      <Filter>Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="StoneFloor.h">
+      <Filter>Objects\StoneFloor</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -42,3 +42,8 @@ void TinyTim::DrawPolygon()
 	WORD index[6] = {0,1,2,3,2,1};
 	DrawPolygonIndexed3D(vertex, 4, index, 2, DX_NONE_GRAPH, FALSE);
 }
+
+void TinyTim::LoadTexture()
+{
+	return;
+}

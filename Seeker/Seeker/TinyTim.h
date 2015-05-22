@@ -21,7 +21,7 @@ private:
 	};
 
 	AnimState state;
-	map<string, int&> image;
+	//vector<int> &images;
 	
 
 public:
@@ -33,11 +33,14 @@ public:
 	void Draw() override;
 
 private:
-	void Walk();	// 歩く
-	void Run();		// 走る
-	void Jump();	// ジャンプ
-	void Land();	// 着地
-	void Roll();	// ローリング
+	//void Walk();	// 歩く
+	//void Run();		// 走る
+	//void Jump();	// ジャンプ
+	//void Land();	// 着地
+	//void Roll();	// ローリング
 
 	void DrawPolygon();
+
+private:
+	void LoadTexture() override;
 };

@@ -6,15 +6,15 @@ using namespace std;
 
 enum ObjID
 {
-	Player,				// プレイヤー
+	Player,
 	Camera,
-	Floar,				// 床
+	Floor,
 };
 
 class Acter : public Object
 {
 protected:
-	static int loaded_images[];
+	//static int loaded_images[50];
 	static map<string, int> loaded_image;
 	ObjID id;
 
@@ -22,9 +22,10 @@ public:
 	Vector3 GetPosition(){ return this->transform.position; }
 
 protected:
-	void LoadTexture();
+	virtual void LoadTexture() = 0;
 };
 
+//----------------------------------------------------------------------
 // 静的メンバの実態宣言
-int Acter::loaded_images[10];	
-map<string, int> Acter::loaded_image;
+//int Acter::loaded_images[10];				// テスト版
+//map<string, int> Acter::loaded_image;		// 本運用版

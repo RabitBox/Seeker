@@ -88,10 +88,10 @@
     <ClCompile Include="ApplicationManager.cpp" />
     <ClCompile Include="CameraPlay.cpp" />
     <ClCompile Include="DxRaps.cpp" />
+    <ClCompile Include="StoneFloor.cpp" />
     <ClCompile Include="Generic.cpp" />
     <ClCompile Include="InputManagerDemo.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="SceneDemo.cpp" />
     <ClCompile Include="ScenePlay.cpp" />
     <ClCompile Include="TinyTim.cpp" />
   </ItemGroup>
@@ -100,6 +100,7 @@
     <ClInclude Include="ApplicationManager.h" />
     <ClInclude Include="CameraPlay.h" />
     <ClInclude Include="DxRaps.h" />
+    <ClInclude Include="StoneFloor.h" />
     <ClInclude Include="Generic.h" />
     <ClInclude Include="TextureManager.h" />
     <ClInclude Include="InputManager.h" />
@@ -107,7 +108,6 @@
     <ClInclude Include="Objects.h" />
     <ClInclude Include="Particle_Rain.h" />
     <ClInclude Include="SceneBase.h" />
-    <ClInclude Include="SceneDemo.h" />
     <ClInclude Include="SceneManager.h" />
     <ClInclude Include="ScenePlay.h" />
     <ClInclude Include="TinyTim.h" />
