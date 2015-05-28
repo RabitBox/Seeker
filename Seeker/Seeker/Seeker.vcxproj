@@ -86,7 +86,6 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="ApplicationManager.cpp" />
-    <ClCompile Include="CameraPlay.cpp" />
     <ClCompile Include="DxRaps.cpp" />
     <ClCompile Include="StoneFloor.cpp" />
     <ClCompile Include="Generic.cpp" />
@@ -98,7 +97,6 @@
   <ItemGroup>
     <ClInclude Include="AnimationBase.h" />
     <ClInclude Include="ApplicationManager.h" />
-    <ClInclude Include="CameraPlay.h" />
     <ClInclude Include="DxRaps.h" />
     <ClInclude Include="StoneFloor.h" />
     <ClInclude Include="Generic.h" />

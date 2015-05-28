@@ -6,19 +6,25 @@
 #include <stdint.h>
 #include <vector>
 #include <memory>
+#include <math.h>
 
 //======================================================================//
 #define CALL_ONCE(func)					do{ static bool _Initialized = false; if (!_Initialized) { func; _Initialized = true; }while(0)
 #define BETWEEN(setmin, setmax, value)	max(setmin, min(setmax, value))
 #define ERR_CALL(str)					do{std::cerr << str << std::endl;}while(0)
-#define CHER(value)						(char)(value)
-#define UCHER(value)					(unsigned char)(value)
-#define INT(value)						(int)(value)
-#define UINT(value)						(unsigned int)(value)
-#define FLOAT(value)					(float)(value)
-#define UFLOAT(value)					(unsigned float)(value)
-#define DOUBLE(value)					(double)(value)
-#define UDOUBLE(value)					(unsigned double)(value)
+#define PI								(3.141592f)		// ÉŒ
+#define RadtoDeg						(57.29577951f)	// radianÇ©ÇÁdegreeÇ… 180 /  ÉŒ
+#define DegtoRad						(0.017453293f)	// degreeÇ©ÇÁradianÇ…  ÉŒ / 180
+//#define DegValue(val)					(val * RadtoDegVal)
+//#define RadValue(val)					(val * DegtoRadVal)
+//#define CHER(value)						(char)(value)
+//#define UCHER(value)					(unsigned char)(value)
+//#define INT(value)						(int)(value)
+//#define UINT(value)						(unsigned int)(value)
+//#define FLOAT(value)					(float)(value)
+//#define UFLOAT(value)					(unsigned float)(value)
+//#define DOUBLE(value)					(double)(value)
+//#define UDOUBLE(value)					(unsigned double)(value)
 
 //======================================================================//
 class Vector2
@@ -98,6 +104,15 @@ public:
 	friend Vector3 operator /(int n, const Vector3& v0)				{ Vector3 V(v0.x / n, v0.y / n, v0.z / n); return V; }
 	friend Vector3 operator /(const Vector3& v0, float f)			{ Vector3 V(v0.x / f, v0.y / f, v0.z / f); return V; }
 	friend Vector3 operator /(float f, const Vector3& v0)			{ Vector3 V(v0.x / f, v0.y / f, v0.z / f); return V; }
+
+	// function
+	Vector3 normalized()
+	{
+		float mag = 1 / norm3(); float _x = x * mag, _y = y * mag, _z = z * mag; return {_x, _y, _z};
+	}
+
+private:
+	float norm3(){ return (float)std::sqrt((double)( x*x + y*y + z*z)); }
 };
 class AVector3
 {
@@ -171,9 +186,11 @@ template<class T>class Singleton
 };
 //======================================================================//
 Vector3 Rotation3D(const Vector3 &this_position, const Vector3 &center_position, const AVector3 &rotation);
-Vector3 RotationAxisX(const Vector3 &this_position, const Vector3 &center_position, const AVector3 &rotation);
-Vector3 RotationAxisY(const Vector3 &this_position, const Vector3 &center_position, const AVector3 &rotation);
-Vector3 RotationAxisZ(const Vector3 &this_position, const Vector3 &center_position, const AVector3 &rotation);
+Vector3 MatrixRotationYaw(const Vector3 &this_position, const Vector3 &center_position, const AVector3 &rotation);		// Yaw  (Yé≤)âÒì]
+Vector3 MatrixRotationPitch(const Vector3 &this_position, const Vector3 &center_position, const AVector3 &rotation);	// Pitch(Xé≤)âÒì]
+Vector3 MatrixRotationRoll(const Vector3 &this_position, const Vector3 &center_position, const AVector3 &rotation);		// Roll (Zé≤)âÒì]
+Vector3 MatrixRotation3D(const Vector3 &this_position, const Vector3 &center_position, const AVector3 &rotation);		// X,Y,ZÇÃâÒì]
+//Vector3 MatrixRotationYPR(const Vector3 &this_position, const Vector3 &center_position, const AVector3 &rotation);		// Yaw, Pitch, RollÇÃèáÇ≈âÒì]Ç∑ÇÈ
 
 //======================================================================//
 class Particle

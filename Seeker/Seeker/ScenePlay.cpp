@@ -8,12 +8,17 @@ using namespace std;
 ScenePlay::ScenePlay()
 {
 	//active_objects.push_back(unique_ptr<Acter>(new TinyTim()));
-	active_objects.push_back(unique_ptr<Acter>(new StoneFloor()));
+	//Vector3 *hoge = new Vector3(1.0f, 1.0f);
+	active_objects.push_back(unique_ptr<Acter>(new StoneFloor({ 1.f, 1.f, 0.f })));
+	//Acter *ac = new StoneFloor(1.f,1.f,0.f);
 }
 
 ScenePlay::~ScenePlay()
 {
-
+	/*for (auto& var : active_objects)
+	{
+		//delete var;
+	}//*/
 }
 
 void ScenePlay::Input()

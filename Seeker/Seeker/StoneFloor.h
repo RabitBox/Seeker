@@ -9,6 +9,7 @@ private:
 
 public:
 	StoneFloor();
+	StoneFloor(float x, float y, float z);
 	StoneFloor(Vector3 _position);
 	virtual ~StoneFloor(){}
 

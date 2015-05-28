@@ -31,6 +31,7 @@ public:
 
 	void Update() override;
 	void Draw() override;
+	//void Delete() override;
 
 private:
 	//void Walk();	// •à‚­

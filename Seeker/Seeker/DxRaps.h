@@ -4,4 +4,5 @@
 
 VECTOR	VGetRap(const Vector3 &vectors);
 VECTOR	AVGetRap(const Vector3 &vectors);
-void	DrawQuadPolygon(Vector3 scale, Vector3 position, AVector3 rotation, int graph_handle, int trans_flag);
+void	DrawQuadPolygon(const Vector3 &c_pos, const Vector3 &norm, const int &graph_handle, const int &trans_flag, const Vector3 *vertex_pos);
+void	DrawQuadPolygon(const Vector3 &c_pos, const AVector3 &c_rot, const Vector3 &scl, const Vector3 &pos, const AVector3 &rot, const int &graph_handle, const int &trans_flag);

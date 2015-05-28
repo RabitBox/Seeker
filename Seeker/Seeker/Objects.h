@@ -4,21 +4,18 @@
 #include "Generic.h"
 using namespace std;
 
-enum ObjID
-{
-	Player,
-	Camera,
-	Floor,
-};
-
 class Acter : public Object
 {
 protected:
+	enum ObjID { Player, Camera, Floor, };
 	//static int loaded_images[50];
 	static map<string, int> loaded_image;
 	ObjID id;
 
 public:
+	Acter(){}
+	virtual ~Acter(){}
+	//virtual void Delete() = 0;
 	Vector3 GetPosition(){ return this->transform.position; }
 
 protected:
