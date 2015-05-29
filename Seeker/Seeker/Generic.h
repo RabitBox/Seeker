@@ -15,8 +15,8 @@
 #define PI								(3.141592f)		// ÉŒ
 #define RadtoDeg						(57.29577951f)	// radianÇ©ÇÁdegreeÇ… 180 /  ÉŒ
 #define DegtoRad						(0.017453293f)	// degreeÇ©ÇÁradianÇ…  ÉŒ / 180
-//#define DegValue(val)					(val * RadtoDegVal)
-//#define RadValue(val)					(val * DegtoRadVal)
+#define DegValue(val)					(val * RadtoDegVal)
+#define RadValue(val)					(val * DegtoRadVal)
 //#define CHER(value)						(char)(value)
 //#define UCHER(value)					(unsigned char)(value)
 //#define INT(value)						(int)(value)
@@ -185,12 +185,10 @@ template<class T>class Singleton
 	//http://cflat-inc.hatenablog.com/entry/2014/03/04/214608
 };
 //======================================================================//
-Vector3 Rotation3D(const Vector3 &this_position, const Vector3 &center_position, const AVector3 &rotation);
 Vector3 MatrixRotationYaw(const Vector3 &this_position, const Vector3 &center_position, const AVector3 &rotation);		// Yaw  (Yé≤)âÒì]
 Vector3 MatrixRotationPitch(const Vector3 &this_position, const Vector3 &center_position, const AVector3 &rotation);	// Pitch(Xé≤)âÒì]
 Vector3 MatrixRotationRoll(const Vector3 &this_position, const Vector3 &center_position, const AVector3 &rotation);		// Roll (Zé≤)âÒì]
-Vector3 MatrixRotation3D(const Vector3 &this_position, const Vector3 &center_position, const AVector3 &rotation);		// X,Y,ZÇÃâÒì]
-//Vector3 MatrixRotationYPR(const Vector3 &this_position, const Vector3 &center_position, const AVector3 &rotation);		// Yaw, Pitch, RollÇÃèáÇ≈âÒì]Ç∑ÇÈ
+Vector3 MatrixRotationYPR(const Vector3 &this_position, const Vector3 &center_position, const AVector3 &rotation);		// X,Y,ZÇÃâÒì]
 
 //======================================================================//
 class Particle
@@ -216,9 +214,11 @@ struct Emitter
 class ParticleSystem
 {
 public:
+	// Constructer
+	ParticleSystem(){}
 
 	// Destructor
-	virtual ~ParticleSystem();
+	virtual ~ParticleSystem(){}
 
 	// function
 	virtual void Emit(){}				// ê∂ê¨

@@ -1,4 +1,5 @@
 #include <math.h>
+#include <iostream>
 #include "Generic.h"
 
 //--------------------------------------------------
@@ -18,24 +19,6 @@ T ContinueMult(const T* value)
 		else ret_val * value[i];
 	}
 	return ret_val;
-}
-
-Vector3 Rotation3D(const Vector3 &this_position, const Vector3 &center_position, const AVector3 &rotation)
-{
-	float x_1 = (float)(this_position.x * ( (cos(rotation.x) * cos(rotation.y) * cos(rotation.z)) - (sin(rotation.x) * sin(rotation.z))));
-	float x_2 = (float)(this_position.y * (-(cos(rotation.x) * cos(rotation.y) * sin(rotation.z)) - (sin(rotation.x) * cos(rotation.z))));
-	float x_3 = (float)(this_position.z * (  cos(rotation.x) * sin(rotation.y)));
-	float y_1 = (float)(this_position.x * ( (sin(rotation.x) * cos(rotation.y) * cos(rotation.z)) + (cos(rotation.x) * sin(rotation.z))));
-	float y_2 = (float)(this_position.y * (-(sin(rotation.x) * cos(rotation.y) * sin(rotation.z)) + (cos(rotation.x) * cos(rotation.z))));
-	float y_3 = (float)(this_position.z * (  sin(rotation.x) * sin(rotation.y)));
-	float z_1 = (float)(this_position.x * -(sin(rotation.y) * cos(rotation.z)));
-	float z_2 = (float)(this_position.y *  (sin(rotation.y) * sin(rotation.z)));
-	float z_3 = (float)(this_position.z *  (cos(rotation.y)));
-	float x = (float)(x_1 + x_2 + x_3);
-	float y = (float)(y_1 + y_2 + y_3);
-	float z = (float)(z_1 + z_2 + z_3);
-	Vector3 pos = {x, y, z};
-	return (pos + center_position);
 }
 
 //--------------------------------------------------
@@ -109,6 +92,42 @@ Vector3 MatrixRotationRoll(const Vector3 &this_position, const Vector3 &center_p
 
 //--------------------------------------------------
 // [name]
+//	MatrixRotationYPR()
+// [action]
+//	Yaw, Pitch, Rollで回転する
+// [argument]
+//	Vector3	 this_position	 : {0, 0, 0} を中心と仮定した
+//	Vector3	 center_position : 中心の座標
+//	AVector3 rotation		 : 回転量
+Vector3 MatrixRotationYPR(const Vector3 &this_position, const Vector3 &center_position, const AVector3 &rotation)
+{
+	float Yaw = (rotation.x * DegtoRad);	// ロール ψ
+	float Pitch = (rotation.y * DegtoRad);	// ピッチ θ
+	float Roll = (rotation.z * DegtoRad);	// ヨー   φ
+
+	float x_1 = (float)((cos(Roll) * cos(Pitch))) * this_position.x;
+	float x_2 = (float)((cos(Roll) * sin(Pitch) * sin(Yaw)) - (sin(Roll) * cos(Yaw))) * this_position.y;
+	float x_3 = (float)((cos(Roll) * sin(Pitch) * cos(Yaw)) + (sin(Roll) * sin(Yaw))) * this_position.z;
+
+	float y_1 = (float)((sin(Roll) * cos(Pitch))) * this_position.x;
+	float y_2 = (float)((sin(Roll) * sin(Pitch) * sin(Yaw)) + (cos(Roll) * cos(Yaw))) * this_position.y;
+	float y_3 = (float)((sin(Roll) * sin(Pitch) * cos(Yaw)) - (cos(Roll) * sin(Yaw))) * this_position.z;
+
+	float z_1 = (float)(-(sin(Pitch))) * this_position.x;
+	float z_2 = (float)((cos(Pitch) * sin(Yaw))) * this_position.y;
+	float z_3 = (float)((cos(Pitch) * sin(Yaw))) * this_position.z;
+
+	float x = (x_1 + x_2 + x_3);
+	float y = (y_1 + y_2 + y_3);
+	float z = (z_1 + z_2 + z_3);
+
+	Vector3 result = { x, y, z };
+
+	return (result + center_position);
+}
+
+//--------------------------------------------------
+// [name]
 //	MatrixRotation3D()
 // [action]
 //	X,Y,Z軸の回転
@@ -116,31 +135,33 @@ Vector3 MatrixRotationRoll(const Vector3 &this_position, const Vector3 &center_p
 //	Vector3	 this_position	 : {0, 0, 0} を中心と仮定した座標
 //	Vector3	 center_position : 中心の座標
 //	AVector3 rotation		 : 回転量
-Vector3 MatrixRotation3D(const Vector3 &this_position, const Vector3 &center_position, const AVector3 &rotation)
+/*Vector3 MatrixRotation3D(const Vector3 &this_position, const Vector3 &center_position, const AVector3 &rotation)
 {
-	Vector3 radian = { rotation.x * DegtoRad, rotation.y * DegtoRad, rotation.z * DegtoRad };	// 角度をラジアンに変換
-	
+	float alp = rotation.y * DegtoRad;	// α(X)
+	float bet = rotation.x * DegtoRad;	// β(Y)
+	float gam = rotation.z * DegtoRad;	// γ(Z)
+
 	// X'の要素
-	float x_1 = (float)(this_position.x * ((cos(radian.x) * cos(radian.y) * cos(radian.z)) - (sin(radian.x) * sin(radian.z))));
-	float x_2 = (float)(this_position.y * (-(cos(radian.x) * cos(radian.y) * sin(radian.z)) - (sin(radian.x) * cos(radian.z))));
-	float x_3 = (float)(this_position.z * (cos(radian.x) * sin(radian.y)));
-	
+	float x_1 = (float)((this_position.x) * ( (cos(alp) * cos(bet) * cos(gam)) - (sin(alp) * sin(gam))));
+	float x_2 = (float)((this_position.y) * (-(cos(alp) * cos(bet) * sin(gam)) - (sin(alp) * cos(gam))));
+	float x_3 = (float)((this_position.z) * ( (cos(alp) * sin(bet))));
+
 	// Y'の要素
-	float y_1 = (float)(this_position.x * ((sin(radian.x) * cos(radian.y) * cos(radian.z)) + (cos(radian.x) * sin(radian.z))));
-	float y_2 = (float)(this_position.y * (-(sin(radian.x) * cos(radian.y) * sin(radian.z)) + (cos(radian.x) * cos(radian.z))));
-	float y_3 = (float)(this_position.z * (sin(radian.x) * sin(radian.y)));
-	
+	float y_1 = (float)((this_position.x) * ( (sin(alp) * cos(bet) * cos(gam)) + (cos(alp) * sin(gam))));
+	float y_2 = (float)((this_position.y) * (-(sin(alp) * cos(bet) * sin(gam)) + (cos(alp) * cos(gam))));
+	float y_3 = (float)((this_position.z) * ( (sin(alp) * sin(bet))));
+
 	// Z'の要素
-	float z_1 = (float)(this_position.x * -(sin(radian.y) * cos(radian.z)));
-	float z_2 = (float)(this_position.y *  (sin(radian.y) * sin(radian.z)));
-	float z_3 = (float)(this_position.z *  (cos(radian.y)));
-	
+	float z_1 = (float)((this_position.x) * (-(sin(bet) * cos(gam))));
+	float z_2 = (float)((this_position.y) * ( (sin(bet) * sin(gam))));
+	float z_3 = (float)((this_position.z) * ( (cos(bet))));
+
 	float x = (float)(x_1 + x_2 + x_3);	// X'
 	float y = (float)(y_1 + y_2 + y_3);	// Y'
 	float z = (float)(z_1 + z_2 + z_3);	// Z'
 	Vector3 pos = { x, y, z };
 	return (pos + center_position);
-}
+}//*/
 
 //--------------------------------------------------
 // [name]
