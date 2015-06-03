@@ -26,6 +26,8 @@ private:
 
 public:
 	TinyTim();
+	TinyTim(float x, float y);
+	TinyTim(float x, float y, float z);
 	TinyTim(Vector3 _positon);
 	virtual ~TinyTim();
 
@@ -44,4 +46,5 @@ private:
 
 private:
 	void LoadTexture() override;
+	void Default();
 };

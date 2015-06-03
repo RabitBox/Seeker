@@ -16,9 +16,6 @@
     <Filter Include="Scene">
       <UniqueIdentifier>{09e362b8-1e66-4c79-974b-c757c62085e0}</UniqueIdentifier>
     </Filter>
-    <Filter Include="ApplicationManager">
-      <UniqueIdentifier>{fb3e79ff-b0db-4450-8cbf-818ca15d664f}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Scene\PlayGame">
       <UniqueIdentifier>{05836f77-367d-4fba-9d9b-f1cbb771d950}</UniqueIdentifier>
     </Filter>
@@ -55,13 +52,13 @@
     <Filter Include="Particle\Rain">
       <UniqueIdentifier>{3c6c4f6e-b707-4b64-b65e-f836b1694113}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Application">
+      <UniqueIdentifier>{fb3e79ff-b0db-4450-8cbf-818ca15d664f}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
       <Filter>ソース ファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="ApplicationManager.cpp">
-      <Filter>ApplicationManager</Filter>
     </ClCompile>
     <ClCompile Include="TinyTim.cpp">
       <Filter>Objects\TinyTim</Filter>
@@ -81,11 +78,14 @@
     <ClCompile Include="StoneFloor.cpp">
       <Filter>Objects\StoneFloor</Filter>
     </ClCompile>
+    <ClCompile Include="Application.cpp">
+      <Filter>Application</Filter>
+    </ClCompile>
+    <ClCompile Include="TextureManager.cpp">
+      <Filter>TextureManager</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="ApplicationManager.h">
-      <Filter>ApplicationManager</Filter>
-    </ClInclude>
     <ClInclude Include="SceneBase.h">
       <Filter>Scene</Filter>
     </ClInclude>
@@ -124,6 +124,9 @@
     </ClInclude>
     <ClInclude Include="StoneFloor.h">
       <Filter>Objects\StoneFloor</Filter>
+    </ClInclude>
+    <ClInclude Include="Application.h">
+      <Filter>Application</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

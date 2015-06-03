@@ -1,18 +1,21 @@
 #include "DxLib.h"
 #include "TinyTim.h"
 
-TinyTim::TinyTim()
+TinyTim::TinyTim(){}
+
+TinyTim::TinyTim(float x, float y)
 {
-	this->id = ObjID::Player;
-	state = AnimState::Stand;
+	this->transform.position = { x, y, 0.f };
+}
+
+TinyTim::TinyTim(float x, float y, float z)
+{
+	this->transform.position = {x,y,z};
 }
 
 TinyTim::TinyTim(Vector3 _position)
 {
 	this->transform.position = _position;
-	this->transform.scale = {1.f,1.f,0.1f};
-	this->transform.rotation = { 0.f, 0.f, 0.f };
-	TinyTim();
 }
 
 TinyTim::~TinyTim(){}
@@ -34,10 +37,10 @@ void TinyTim::DrawPolygon()
 	float y = this->transform.position.y;
 	float z = this->transform.position.z;
 	VERTEX3D vertex[4] = { 
-		{ VGet(x - 10.f, y - 10.f, z), VGet(0.f, 0.f, -1.f), GetColorU8(0.f, 255.f, 255.f, 255.f), GetColorU8(0.f, 0.f, 0.f, 0.f), 0.f, 0.f, 0.f, 0.f },
-		{ VGet(x - 10.f, y + 10.f, z), VGet(0.f, 0.f, -1.f), GetColorU8(0.f, 255.f, 255.f, 0.f), GetColorU8(0.f, 0.f, 0.f, 0.f), 0.f, 0.f, 0.f, 0.f },
-		{ VGet(x + 10.f, y - 10.f, z), VGet(0.f, 0.f, -1.f), GetColorU8(0.f, 255.f, 0.f, 255.f), GetColorU8(0.f, 0.f, 0.f, 0.f), 0.f, 0.f, 0.f, 0.f },
-		{ VGet(x + 10.f, y + 10.f, z), VGet(0.f, 0.f, -1.f), GetColorU8(0.f, 0.f, 255.f, 255.f), GetColorU8(0.f, 0.f, 0.f, 0.f), 0.f, 0.f, 0.f, 0.f }
+		{ VGet(x - 10.f, y - 10.f, z), VGet(0.f, 0.f, -1.f), GetColorU8(0, 255, 255, 255), GetColorU8(0, 0, 0, 0), 0.f, 0.f, 0.f, 0.f },
+		{ VGet(x - 10.f, y + 10.f, z), VGet(0.f, 0.f, -1.f), GetColorU8(0, 255, 255, 0), GetColorU8(0, 0, 0, 0), 0.f, 0.f, 0.f, 0.f },
+		{ VGet(x + 10.f, y - 10.f, z), VGet(0.f, 0.f, -1.f), GetColorU8(0, 255, 0, 255), GetColorU8(0, 0, 0, 0), 0.f, 0.f, 0.f, 0.f },
+		{ VGet(x + 10.f, y + 10.f, z), VGet(0.f, 0.f, -1.f), GetColorU8(0, 0, 255, 255), GetColorU8(0, 0, 0, 0), 0.f, 0.f, 0.f, 0.f }
 	};
 	WORD index[6] = {0,1,2,3,2,1};
 	DrawPolygonIndexed3D(vertex, 4, index, 2, DX_NONE_GRAPH, FALSE);
@@ -46,4 +49,12 @@ void TinyTim::DrawPolygon()
 void TinyTim::LoadTexture()
 {
 	return;
+}
+
+void TinyTim::Default()
+{
+	this->id = ObjID::Player;
+	state = AnimState::Stand;
+	this->transform.scale = { 20.f, 20.f, 0.1f };
+	this->transform.rotation = { 0.f, 0.f, 0.f };
 }

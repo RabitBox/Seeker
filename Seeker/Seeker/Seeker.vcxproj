@@ -85,18 +85,19 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="ApplicationManager.cpp" />
+    <ClCompile Include="Application.cpp" />
     <ClCompile Include="DxRaps.cpp" />
     <ClCompile Include="StoneFloor.cpp" />
     <ClCompile Include="Generic.cpp" />
     <ClCompile Include="InputManagerDemo.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="ScenePlay.cpp" />
+    <ClCompile Include="TextureManager.cpp" />
     <ClCompile Include="TinyTim.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AnimationBase.h" />
-    <ClInclude Include="ApplicationManager.h" />
+    <ClInclude Include="Application.h" />
     <ClInclude Include="DxRaps.h" />
     <ClInclude Include="StoneFloor.h" />
     <ClInclude Include="Generic.h" />

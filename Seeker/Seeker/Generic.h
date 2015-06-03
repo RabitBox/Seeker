@@ -2,13 +2,20 @@
 // 汎用コード集
 // 2015/01/30
 //--------------------------------------------------
-#pragma once
+// 冗長インクルードガード
+#ifndef _THIRD_LIBS_
+#define _THIRD_LIBS_
 #include <stdint.h>
 #include <vector>
 #include <memory>
 #include <math.h>
+#endif
 
+//#pragma once//インクルードガード
+#ifndef _INCLUDE_GENERIC_
+#define _INCLUDE_GENERIC_
 //======================================================================//
+// define
 #define CALL_ONCE(func)					do{ static bool _Initialized = false; if (!_Initialized) { func; _Initialized = true; }while(0)
 #define BETWEEN(setmin, setmax, value)	max(setmin, min(setmax, value))
 #define ERR_CALL(str)					do{std::cerr << str << std::endl;}while(0)
@@ -27,6 +34,7 @@
 //#define UDOUBLE(value)					(unsigned double)(value)
 
 //======================================================================//
+// Basic Classes
 class Vector2
 {
 public:
@@ -158,12 +166,18 @@ private:
 	// Function
 	static float Compensate(float value){ if (value < 0.0f || value >= 360.0f) { value += (float)((value / 360.0f) * 360.0f); } return value; }
 };
+template<class T>class Singleton
+{
+	//http://cflat-inc.hatenablog.com/entry/2014/03/04/214608
+};
 
+//======================================================================//
+// Advance Classes
 struct Transform
 {
 	Vector3		position;
-	AVector3	rotation; 
-	Vector3		scale; 
+	AVector3	rotation;
+	Vector3		scale;
 };
 class Object
 {
@@ -176,21 +190,9 @@ public:
 	virtual ~Object(){}
 
 	// function
-	virtual void Update() = 0;
-	virtual void Draw() = 0;
+	virtual void Update(){}
+	virtual void Draw(){}
 };
-
-template<class T>class Singleton
-{
-	//http://cflat-inc.hatenablog.com/entry/2014/03/04/214608
-};
-//======================================================================//
-Vector3 MatrixRotationYaw(const Vector3 &this_position, const Vector3 &center_position, const AVector3 &rotation);		// Yaw  (Y軸)回転
-Vector3 MatrixRotationPitch(const Vector3 &this_position, const Vector3 &center_position, const AVector3 &rotation);	// Pitch(X軸)回転
-Vector3 MatrixRotationRoll(const Vector3 &this_position, const Vector3 &center_position, const AVector3 &rotation);		// Roll (Z軸)回転
-Vector3 MatrixRotationYPR(const Vector3 &this_position, const Vector3 &center_position, const AVector3 &rotation);		// X,Y,Zの回転
-
-//======================================================================//
 class Particle
 {
 public:
@@ -221,7 +223,7 @@ public:
 	virtual ~ParticleSystem(){}
 
 	// function
-	virtual void Emit(){}				// 生成
+	virtual void Emit() = 0;			// 生成
 	virtual void Simulate(){}			// シュミレート
 	virtual void Update(){}				// 更新
 
@@ -232,4 +234,11 @@ protected:
 	float									frame_duration;		// EmissionTimerの1f毎の上昇数値
 };
 
+//======================================================================//
+// functions
+Vector3 MatrixRotationYaw(const Vector3 &this_position, const Vector3 &center_position, const AVector3 &rotation);		// Yaw  (Y軸)回転
+Vector3 MatrixRotationPitch(const Vector3 &this_position, const Vector3 &center_position, const AVector3 &rotation);	// Pitch(X軸)回転
+Vector3 MatrixRotationRoll(const Vector3 &this_position, const Vector3 &center_position, const AVector3 &rotation);		// Roll (Z軸)回転
+Vector3 MatrixRotationYPR(const Vector3 &this_position, const Vector3 &center_position, const AVector3 &rotation);		// X,Y,Zの回転
 
+#endif

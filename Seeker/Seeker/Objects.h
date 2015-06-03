@@ -1,6 +1,6 @@
 #pragma once
 #include <map>
-#include <string>
+//#include <string>
 #include "Generic.h"
 using namespace std;
 
@@ -8,21 +8,14 @@ class Acter : public Object
 {
 protected:
 	enum ObjID { Player, Camera, Floor, };
-	//static int loaded_images[50];
-	static map<string, int> loaded_image;
+	static map<char*, int> loaded_image;
 	ObjID id;
 
 public:
 	Acter(){}
 	virtual ~Acter(){}
-	//virtual void Delete() = 0;
-	Vector3 GetPosition(){ return this->transform.position; }
 
 protected:
-	virtual void LoadTexture() = 0;
+	virtual void LoadTexture(){}
 };
 
-//----------------------------------------------------------------------
-// 静的メンバの実態宣言
-//int Acter::loaded_images[10];				// テスト版
-//map<string, int> Acter::loaded_image;		// 本運用版

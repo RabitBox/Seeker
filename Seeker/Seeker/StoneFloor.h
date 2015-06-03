@@ -1,16 +1,15 @@
-//
+// êŒÇÃè∞ÉNÉâÉX
 #pragma once
 #include "Objects.h"
 
 class StoneFloor : public Acter
 {
 private:
-	//int* images;
+	int *images = nullptr;
 
 public:
 	StoneFloor();
 	StoneFloor(float x, float y, float z);
-	StoneFloor(Vector3 _position);
 	virtual ~StoneFloor(){}
 
 	void Update() override;
@@ -18,7 +17,7 @@ public:
 
 private:
 	void Default();
+
+protected:
 	void LoadTexture() override;
 };
-
-//*/

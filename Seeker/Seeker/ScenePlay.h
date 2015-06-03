@@ -6,7 +6,15 @@
 class ScenePlay : public SceneBace
 {
 private:
-	std::vector <std::unique_ptr<Acter>> active_objects;
+	enum MapId
+	{
+		none		= 0,
+		tinytim		= 1,
+		stone_floor	= 2,
+	};
+
+private:
+	std::vector < std::unique_ptr<Acter> > objects;
 
 public:
 	ScenePlay();
@@ -15,4 +23,9 @@ public:
 	virtual void Input() override;
 	virtual void Update() override;
 	virtual void Draw() override;
+
+private:
+	void LoadMapData();
+	void MapSet(int map_array[]);
+	void CreateObject(int obj_id, int x, int y, int f_x, int f_y);
 };
