@@ -55,6 +55,9 @@
     <Filter Include="Application">
       <UniqueIdentifier>{fb3e79ff-b0db-4450-8cbf-818ca15d664f}</UniqueIdentifier>
     </Filter>
+    <Filter Include="DxRaps">
+      <UniqueIdentifier>{328507fc-1129-4b43-a5c1-75cdb5551c92}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -69,9 +72,6 @@
     <ClCompile Include="Generic.cpp">
       <Filter>Generic</Filter>
     </ClCompile>
-    <ClCompile Include="DxRaps.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
     <ClCompile Include="InputManagerDemo.cpp">
       <Filter>Input\Demo</Filter>
     </ClCompile>
@@ -83,6 +83,12 @@
     </ClCompile>
     <ClCompile Include="TextureManager.cpp">
       <Filter>TextureManager</Filter>
+    </ClCompile>
+    <ClCompile Include="DxRaps.cpp">
+      <Filter>DxRaps</Filter>
+    </ClCompile>
+    <ClCompile Include="AnimationData.cpp">
+      <Filter>Animation</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -104,12 +110,6 @@
     <ClInclude Include="Generic.h">
       <Filter>Generic</Filter>
     </ClInclude>
-    <ClInclude Include="AnimationBase.h">
-      <Filter>Animation</Filter>
-    </ClInclude>
-    <ClInclude Include="DxRaps.h">
-      <Filter>ヘッダー ファイル</Filter>
-    </ClInclude>
     <ClInclude Include="InputManagerDemo.h">
       <Filter>Input\Demo</Filter>
     </ClInclude>
@@ -127,6 +127,12 @@
     </ClInclude>
     <ClInclude Include="Application.h">
       <Filter>Application</Filter>
+    </ClInclude>
+    <ClInclude Include="DxRaps.h">
+      <Filter>DxRaps</Filter>
+    </ClInclude>
+    <ClInclude Include="AnimationData.h">
+      <Filter>Animation</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

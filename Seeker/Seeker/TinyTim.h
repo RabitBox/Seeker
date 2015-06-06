@@ -5,12 +5,12 @@
 //----------------------------------------------------------------------
 #pragma once
 #include "Objects.h"
-
+#include "AnimationData.h"
 
 class TinyTim : public Acter
 {
 private:
-	enum AnimState
+	enum State
 	{
 		Stand,	// 立ち
 		Walk,	// 歩き
@@ -20,8 +20,10 @@ private:
 		Roll,	// ローリング
 	};
 
-	AnimState state;
-	//vector<int> &images;
+	int						test_loaded[37];
+	State					state;
+	vector<int*>			images;
+	vector<Animation>	anim_data;
 	
 
 public:
@@ -33,18 +35,16 @@ public:
 
 	void Update() override;
 	void Draw() override;
-	//void Delete() override;
 
 private:
 	//void Walk();	// 歩く
-	//void Run();		// 走る
+	//void Run();	// 走る
 	//void Jump();	// ジャンプ
 	//void Land();	// 着地
 	//void Roll();	// ローリング
 
-	void DrawPolygon();
-
 private:
 	void LoadTexture() override;
+	void AnimationSet();
 	void Default();
 };

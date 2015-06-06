@@ -24,6 +24,7 @@
 #define DegtoRad						(0.017453293f)	// degree‚©‚çradian‚É  ƒÎ / 180
 #define DegValue(val)					(val * RadtoDegVal)
 #define RadValue(val)					(val * DegtoRadVal)
+#define DELETE(val)						do{ delete val; val = nullptr; }while(0)
 //#define CHER(value)						(char)(value)
 //#define UCHER(value)					(unsigned char)(value)
 //#define INT(value)						(int)(value)
@@ -166,10 +167,10 @@ private:
 	// Function
 	static float Compensate(float value){ if (value < 0.0f || value >= 360.0f) { value += (float)((value / 360.0f) * 360.0f); } return value; }
 };
-template<class T>class Singleton
+/*template<class T>class Singleton
 {
 	//http://cflat-inc.hatenablog.com/entry/2014/03/04/214608
-};
+};//*/
 
 //======================================================================//
 // Advance Classes
