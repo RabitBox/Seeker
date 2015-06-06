@@ -14,8 +14,8 @@ class TextureManager
 private:
 	map<char*, int> loaded_image;
 
-public:
-	~TextureManager(){}
+//public:
+	//~TextureManager(){}
 
 private:
 	TextureManager(){}

@@ -24,15 +24,6 @@
 #define DegtoRad						(0.017453293f)	// degree‚©‚çradian‚É  ƒÎ / 180
 #define DegValue(val)					(val * RadtoDegVal)
 #define RadValue(val)					(val * DegtoRadVal)
-#define DELETE(val)						do{ delete val; val = nullptr; }while(0)
-//#define CHER(value)						(char)(value)
-//#define UCHER(value)					(unsigned char)(value)
-//#define INT(value)						(int)(value)
-//#define UINT(value)						(unsigned int)(value)
-//#define FLOAT(value)					(float)(value)
-//#define UFLOAT(value)					(unsigned float)(value)
-//#define DOUBLE(value)					(double)(value)
-//#define UDOUBLE(value)					(unsigned double)(value)
 
 //======================================================================//
 // Basic Classes

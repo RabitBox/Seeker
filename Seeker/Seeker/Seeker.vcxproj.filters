@@ -55,7 +55,7 @@
     <Filter Include="Application">
       <UniqueIdentifier>{fb3e79ff-b0db-4450-8cbf-818ca15d664f}</UniqueIdentifier>
     </Filter>
-    <Filter Include="DxRaps">
+    <Filter Include="Generic\DxRaps">
       <UniqueIdentifier>{328507fc-1129-4b43-a5c1-75cdb5551c92}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
@@ -69,26 +69,26 @@
     <ClCompile Include="ScenePlay.cpp">
       <Filter>Scene\PlayGame</Filter>
     </ClCompile>
-    <ClCompile Include="Generic.cpp">
-      <Filter>Generic</Filter>
-    </ClCompile>
     <ClCompile Include="InputManagerDemo.cpp">
       <Filter>Input\Demo</Filter>
     </ClCompile>
     <ClCompile Include="StoneFloor.cpp">
       <Filter>Objects\StoneFloor</Filter>
     </ClCompile>
-    <ClCompile Include="Application.cpp">
-      <Filter>Application</Filter>
-    </ClCompile>
     <ClCompile Include="TextureManager.cpp">
       <Filter>TextureManager</Filter>
     </ClCompile>
-    <ClCompile Include="DxRaps.cpp">
-      <Filter>DxRaps</Filter>
-    </ClCompile>
     <ClCompile Include="AnimationData.cpp">
       <Filter>Animation</Filter>
+    </ClCompile>
+    <ClCompile Include="Application.cpp">
+      <Filter>Application</Filter>
+    </ClCompile>
+    <ClCompile Include="DxRaps.cpp">
+      <Filter>Generic\DxRaps</Filter>
+    </ClCompile>
+    <ClCompile Include="Generic.cpp">
+      <Filter>Generic</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -107,9 +107,6 @@
     <ClInclude Include="ScenePlay.h">
       <Filter>Scene\PlayGame</Filter>
     </ClInclude>
-    <ClInclude Include="Generic.h">
-      <Filter>Generic</Filter>
-    </ClInclude>
     <ClInclude Include="InputManagerDemo.h">
       <Filter>Input\Demo</Filter>
     </ClInclude>
@@ -125,14 +122,17 @@
     <ClInclude Include="StoneFloor.h">
       <Filter>Objects\StoneFloor</Filter>
     </ClInclude>
+    <ClInclude Include="AnimationData.h">
+      <Filter>Animation</Filter>
+    </ClInclude>
     <ClInclude Include="Application.h">
       <Filter>Application</Filter>
     </ClInclude>
     <ClInclude Include="DxRaps.h">
-      <Filter>DxRaps</Filter>
+      <Filter>Generic\DxRaps</Filter>
     </ClInclude>
-    <ClInclude Include="AnimationData.h">
-      <Filter>Animation</Filter>
+    <ClInclude Include="Generic.h">
+      <Filter>Generic</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

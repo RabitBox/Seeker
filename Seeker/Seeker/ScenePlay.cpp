@@ -25,33 +25,28 @@ int test_map_data[] = {
 
 ScenePlay::ScenePlay()
 {
-	//objects.push_back(unique_ptr<Acter>( new TinyTim(0.f, 0.f, 0.f) ));
-	//objects.push_back(unique_ptr<Acter>(new StoneFloor(0.f, 40.f, 0.f)));
 	MapSet(test_map_data);
 }
 
 ScenePlay::~ScenePlay()
 {
-	/*for (auto& var : active_objects)
-	{
-		//delete var;
-	}//*/
+	objects.clear();
 }
 
 void ScenePlay::Input()
 {
-	DrawString(0, 0, "Play : 入力を受け付けました", GetColor(255, 255, 255));
+	//DrawString(0, 0, "Play : 入力を受け付けました", GetColor(255, 255, 255));
 }
 
 void ScenePlay::Update()
 {
-	DrawString(0, 15, "Play : 更新しました", GetColor(255, 255, 255));
+	//DrawString(0, 15, "Play : 更新しました", GetColor(255, 255, 255));
 	SetCameraPositionAndTarget_UpVecY(VGet(defX, defY, -100.f), VGet(defX, defY, 0.f));
 }
 
 void ScenePlay::Draw()
 {
-	DrawString(0, 30, "Play : 描画しました", GetColor(255, 255, 255));
+	//DrawString(0, 30, "Play : 描画しました", GetColor(255, 255, 255));
 	for (auto& var : objects)
 	{
 		var->Draw();

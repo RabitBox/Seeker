@@ -16,8 +16,8 @@ int* TextureManager::LoadTexture(char* key, int &texture)
 
 void TextureManager::EraceTexture(char* key)
 {
-	map<char*, int>::iterator itr_image = loaded_image.find(key);
-	loaded_image.erase(itr_image);
+	map<char*, int>::iterator itr_image = loaded_image.find(key);	// keyで登録されているテクスチャのイテレータを探す
+	loaded_image.erase(itr_image);									// 解放する
 }
 
 // テクスチャデータが既に登録されているかをチェックする

@@ -1,6 +1,7 @@
 #include "DxLib.h"
 #include "DxRaps.h"
 #include "TinyTim.h"
+#include "TextureManager.h"
 
 TinyTim::TinyTim(){}
 

@@ -1,5 +1,6 @@
 #include "StoneFloor.h"
 #include "DxRaps.h"
+#include "TextureManager.h"
 
 //--------------------------------------------------
 StoneFloor::StoneFloor()
