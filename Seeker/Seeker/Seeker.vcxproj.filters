@@ -55,7 +55,10 @@
     <Filter Include="Application">
       <UniqueIdentifier>{fb3e79ff-b0db-4450-8cbf-818ca15d664f}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Generic\DxRaps">
+    <Filter Include="CollisionManager">
+      <UniqueIdentifier>{3ac84449-166f-46be-9b94-b5cab24787d5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DxRaps">
       <UniqueIdentifier>{328507fc-1129-4b43-a5c1-75cdb5551c92}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
@@ -85,17 +88,17 @@
       <Filter>Application</Filter>
     </ClCompile>
     <ClCompile Include="DxRaps.cpp">
-      <Filter>Generic\DxRaps</Filter>
+      <Filter>DxRaps</Filter>
     </ClCompile>
     <ClCompile Include="Generic.cpp">
       <Filter>Generic</Filter>
     </ClCompile>
+    <ClCompile Include="Command.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="SceneBase.h">
-      <Filter>Scene</Filter>
-    </ClInclude>
-    <ClInclude Include="SceneManager.h">
       <Filter>Scene</Filter>
     </ClInclude>
     <ClInclude Include="TinyTim.h">
@@ -129,10 +132,22 @@
       <Filter>Application</Filter>
     </ClInclude>
     <ClInclude Include="DxRaps.h">
-      <Filter>Generic\DxRaps</Filter>
+      <Filter>DxRaps</Filter>
     </ClInclude>
     <ClInclude Include="Generic.h">
       <Filter>Generic</Filter>
+    </ClInclude>
+    <ClInclude Include="CollisionManager.h">
+      <Filter>CollisionManager</Filter>
+    </ClInclude>
+    <ClInclude Include="CollisionShapes.h">
+      <Filter>CollisionManager</Filter>
+    </ClInclude>
+    <ClInclude Include="TimeManager.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Command.h">
+      <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

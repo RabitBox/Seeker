@@ -17,7 +17,4 @@ public:
 
 private:
 	void Default();
-
-protected:
-	void LoadTexture() override;
 };

@@ -24,6 +24,7 @@
 #define DegtoRad						(0.017453293f)	// degree‚©‚çradian‚É  ƒÎ / 180
 #define DegValue(val)					(val * RadtoDegVal)
 #define RadValue(val)					(val * DegtoRadVal)
+#define ArrayLength(val)				(sizeof(val) / sizeof(val[0]))
 
 //======================================================================//
 // Basic Classes

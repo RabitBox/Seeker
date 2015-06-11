@@ -1,3 +1,4 @@
+#include <windows.h>
 #include <math.h>
 #include <iostream>
 #include "Generic.h"
@@ -136,3 +137,24 @@ Vector3 MatrixRotationYPR(const Vector3 &this_position, const Vector3 &center_po
 	return result;//*/
 }
 
+/*void FPSSet()
+{
+	//メッセージループです。
+	DWORD up_time = timeGetTime();	//前回更新時間
+	const int kFPS = 1000 / 60;		//希望FPS（ミリ秒に変換しています）
+	do
+	{
+		//ここはWINイベント
+		if (PeekMessage(&msg, NULL, 0, 0, PM_REMOVE))
+		{
+			DispatchMessage(&msg);
+		}
+		//FPSの時間が来ているかな？
+		else if (up_time + kFPS <= timeGetTime())
+		{
+			//次の更新時間設定
+			up_time += kFPS;
+			//ここが更新ゾーンです
+		}
+	}
+}//*/

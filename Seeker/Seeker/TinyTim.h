@@ -7,24 +7,32 @@
 #include "Objects.h"
 #include "AnimationData.h"
 
+#define TimTexNum 37
+
 class TinyTim : public Acter
 {
 private:
-	enum State
+	enum State : int
 	{
 		Stand,	// 立ち
 		Walk,	// 歩き
 		Run,	// 走り
 		Jump,	// ジャンプ
 		Land,	// 着地
-		Roll,	// ローリング
+		All,
 	};
 
-	int						test_loaded[37];
+	struct  AnimState
+	{
+		State	now_state;
+		State*	next_state = nullptr;
+	};
+
 	State					state;
 	vector<int*>			images;
-	vector<Animation>	anim_data;
-	
+	AnimState				anim_state[(int)State::All];
+	//vector<Animation>		anim_data;
+	Animation anim;
 
 public:
 	TinyTim();
@@ -46,5 +54,6 @@ private:
 private:
 	void LoadTexture() override;
 	void AnimationSet();
+	void AnimStateSet();
 	void Default();
 };

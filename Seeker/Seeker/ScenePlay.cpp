@@ -18,8 +18,8 @@ int test_map_data[] = {
 	5, 6, 0, 80,
 	0, 0, 0, 0, 0, 0,	// 80
 	0, 0, 0, 0, 0, 0,	// 60
-	0, 0, 0, 0, 0, 0,	// 40
-	0, 0, 1, 0, 0, 0,	// 20
+	0, 0, 1, 0, 0, 0,	// 40
+	0, 0, 0, 0, 0, 0,	// 20
 	2, 2, 2, 2, 2, 2,	// 0
 };//*/
 
@@ -41,6 +41,10 @@ void ScenePlay::Input()
 void ScenePlay::Update()
 {
 	//DrawString(0, 15, "Play : XV‚µ‚Ü‚µ‚½", GetColor(255, 255, 255));
+	for (auto& var : objects)
+	{
+		var->Update();
+	}
 	SetCameraPositionAndTarget_UpVecY(VGet(defX, defY, -100.f), VGet(defX, defY, 0.f));
 }
 

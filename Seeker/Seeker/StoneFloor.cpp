@@ -6,12 +6,14 @@
 StoneFloor::StoneFloor()
 {
 	this->transform.position = { 0.f, 0.f, 0.f };
-	StoneFloor::Default();
+	Default();
+	//LoadTexture();
 }
 StoneFloor::StoneFloor(float x, float y, float z)
 {
 	this->transform.position = {x,y,z};
-	StoneFloor::Default();
+	Default();
+	//LoadTexture();
 }
 /*StoneFloor::StoneFloor(Vector3 _position)
 {
@@ -28,9 +30,9 @@ void StoneFloor::Update()
 void StoneFloor::Draw()
 {
 	DrawString(0, 45, "Stone : •`‰æ‚µ‚Ü‚µ‚½", GetColor(255, 255, 255));
-	DrawQuadPolygon(this->transform.position, this->transform.rotation, this->transform.scale, { 0.0f, 10.0f, 0.0f }, { 90.0f, 0.0f, 0.0f }, DX_NONE_GRAPH, true);
-	DrawQuadPolygon(this->transform.position, this->transform.rotation, this->transform.scale, { 0.0f, -10.0f, 0.0f }, { 90.0f, 0.0f, 0.0f }, DX_NONE_GRAPH, true);
-	DrawQuadPolygon(this->transform.position, this->transform.rotation, this->transform.scale, { 0.0f, 0.0f, -10.0f }, { 0.0f, 0.0f, 0.0f }, DX_NONE_GRAPH, true);
+	DrawQuadPolygon(this->transform.position, this->transform.rotation, this->transform.scale, { 0.0f, 10.0f, 0.0f }, { 90.0f, 0.0f, 0.0f }, *images, true);
+	DrawQuadPolygon(this->transform.position, this->transform.rotation, this->transform.scale, { 0.0f, -10.0f, 0.0f }, { 90.0f, 0.0f, 0.0f }, *images, true);
+	DrawQuadPolygon(this->transform.position, this->transform.rotation, this->transform.scale, { 0.0f, 0.0f, -10.0f }, { 0.0f, 0.0f, 0.0f }, *images, true);
 
 	return;
 }
@@ -40,9 +42,7 @@ void StoneFloor::Default()
 	this->id = ObjID::Floor;
 	this->transform.scale = { 20.f, 20.f, 0.f };
 	this->transform.rotation = { 0.f, 0.f, 0.f };
-}//*/
 
-void StoneFloor::LoadTexture()
-{
-	return;
+	int dem_load = LoadGraph("Texture/StoneTile.png");
+	images = TextureManager::GetInstance()->LoadTexture("StoneTile", dem_load);
 }

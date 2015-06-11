@@ -87,6 +87,7 @@
   <ItemGroup>
     <ClCompile Include="AnimationData.cpp" />
     <ClCompile Include="Application.cpp" />
+    <ClCompile Include="Command.cpp" />
     <ClCompile Include="DxRaps.cpp" />
     <ClCompile Include="StoneFloor.cpp" />
     <ClCompile Include="Generic.cpp" />
@@ -99,6 +100,9 @@
   <ItemGroup>
     <ClInclude Include="AnimationData.h" />
     <ClInclude Include="Application.h" />
+    <ClInclude Include="CollisionManager.h" />
+    <ClInclude Include="CollisionShapes.h" />
+    <ClInclude Include="Command.h" />
     <ClInclude Include="DxRaps.h" />
     <ClInclude Include="StoneFloor.h" />
     <ClInclude Include="Generic.h" />
@@ -108,8 +112,8 @@
     <ClInclude Include="Objects.h" />
     <ClInclude Include="Particle_Rain.h" />
     <ClInclude Include="SceneBase.h" />
-    <ClInclude Include="SceneManager.h" />
     <ClInclude Include="ScenePlay.h" />
+    <ClInclude Include="TimeManager.h" />
     <ClInclude Include="TinyTim.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

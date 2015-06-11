@@ -16,9 +16,12 @@ void Application::AppMain()
 {
 	while (!CheckHitKey(KEY_INPUT_ESCAPE) || ProcessMessage() == -1)
 	{
+		ClearDrawScreen();
+		fps.Update();		// FPS‚ÌƒYƒŒ‚ğŒv‘ª
 		scene->Input();
 		scene->Update();
 		scene->Draw();
+		fps.Wait();			// ƒYƒŒ‚ğC³
 	}
 	return;
 }
