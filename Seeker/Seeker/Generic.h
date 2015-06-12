@@ -185,6 +185,8 @@ public:
 	// function
 	virtual void Update(){}
 	virtual void Draw(){}
+
+	Vector3 GetPos(){ return transform.position; }
 };
 class Particle
 {

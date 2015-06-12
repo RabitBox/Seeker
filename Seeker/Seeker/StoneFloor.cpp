@@ -29,12 +29,9 @@ void StoneFloor::Update()
 
 void StoneFloor::Draw()
 {
-	DrawString(0, 45, "Stone : •`‰æ‚µ‚Ü‚µ‚½", GetColor(255, 255, 255));
 	DrawQuadPolygon(this->transform.position, this->transform.rotation, this->transform.scale, { 0.0f, 10.0f, 0.0f }, { 90.0f, 0.0f, 0.0f }, *images, true);
-	DrawQuadPolygon(this->transform.position, this->transform.rotation, this->transform.scale, { 0.0f, -10.0f, 0.0f }, { 90.0f, 0.0f, 0.0f }, *images, true);
+	//DrawQuadPolygon(this->transform.position, this->transform.rotation, this->transform.scale, { 0.0f, -10.0f, 0.0f }, { 90.0f, 0.0f, 0.0f }, *images, true);
 	DrawQuadPolygon(this->transform.position, this->transform.rotation, this->transform.scale, { 0.0f, 0.0f, -10.0f }, { 0.0f, 0.0f, 0.0f }, *images, true);
-
-	return;
 }
 
 void StoneFloor::Default()

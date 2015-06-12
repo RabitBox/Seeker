@@ -28,12 +28,6 @@
     <Filter Include="Input">
       <UniqueIdentifier>{77f4d637-ebc6-4d1a-81fd-c755befbe47d}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Input\Demo">
-      <UniqueIdentifier>{532c15b2-ab2d-4cab-8ed1-1609a11b3fa4}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Input\Base">
-      <UniqueIdentifier>{8c6109a5-4f7d-4c3c-a664-a742da52a436}</UniqueIdentifier>
-    </Filter>
     <Filter Include="TextureManager">
       <UniqueIdentifier>{979692a0-84ec-48ee-8a06-0a66e59f3815}</UniqueIdentifier>
     </Filter>
@@ -61,6 +55,21 @@
     <Filter Include="DxRaps">
       <UniqueIdentifier>{328507fc-1129-4b43-a5c1-75cdb5551c92}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Stage">
+      <UniqueIdentifier>{a48a7778-b9d7-4f35-903b-ab0be58f1397}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Stage\Base">
+      <UniqueIdentifier>{16ed27ef-380b-43be-a9aa-75ee3475d5eb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Stage\Demo">
+      <UniqueIdentifier>{d3a18863-24f2-4e01-ae98-46f1beb37213}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Camera">
+      <UniqueIdentifier>{ead61f4d-ce64-4068-b3bf-6f951ca65d87}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Objects\BackForest">
+      <UniqueIdentifier>{9fdae780-1e24-44c8-b20c-b89e38238060}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -71,9 +80,6 @@
     </ClCompile>
     <ClCompile Include="ScenePlay.cpp">
       <Filter>Scene\PlayGame</Filter>
-    </ClCompile>
-    <ClCompile Include="InputManagerDemo.cpp">
-      <Filter>Input\Demo</Filter>
     </ClCompile>
     <ClCompile Include="StoneFloor.cpp">
       <Filter>Objects\StoneFloor</Filter>
@@ -96,6 +102,18 @@
     <ClCompile Include="Command.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
+    <ClCompile Include="InputManager.cpp">
+      <Filter>Input</Filter>
+    </ClCompile>
+    <ClCompile Include="StageBase.cpp">
+      <Filter>Stage\Base</Filter>
+    </ClCompile>
+    <ClCompile Include="StageDemo.cpp">
+      <Filter>Stage\Demo</Filter>
+    </ClCompile>
+    <ClCompile Include="BackForest.cpp">
+      <Filter>Objects\BackForest</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="SceneBase.h">
@@ -109,12 +127,6 @@
     </ClInclude>
     <ClInclude Include="ScenePlay.h">
       <Filter>Scene\PlayGame</Filter>
-    </ClInclude>
-    <ClInclude Include="InputManagerDemo.h">
-      <Filter>Input\Demo</Filter>
-    </ClInclude>
-    <ClInclude Include="InputManager.h">
-      <Filter>Input\Base</Filter>
     </ClInclude>
     <ClInclude Include="TextureManager.h">
       <Filter>TextureManager</Filter>
@@ -148,6 +160,27 @@
     </ClInclude>
     <ClInclude Include="Command.h">
       <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="InputManager.h">
+      <Filter>Input</Filter>
+    </ClInclude>
+    <ClInclude Include="World.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="CollisionCheckers.h">
+      <Filter>CollisionManager</Filter>
+    </ClInclude>
+    <ClInclude Include="StageBase.h">
+      <Filter>Stage\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="StageDemo.h">
+      <Filter>Stage\Demo</Filter>
+    </ClInclude>
+    <ClInclude Include="Camera.h">
+      <Filter>Camera</Filter>
+    </ClInclude>
+    <ClInclude Include="BackForest.h">
+      <Filter>Objects\BackForest</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

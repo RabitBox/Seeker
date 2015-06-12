@@ -3,33 +3,48 @@
 
 class InputManager
 {
-public:
+private:
 	InputManager();
-	virtual ~InputManager();
-};
+	static InputManager* input_manager;
 
-// •ûŒü‚Ì“ü—Í
-enum Arrow : int
-{
-	NEUTRAL = 0,	// –³
-	UP		= 1,	// ã
-	DOWN	= 2,	// ‰º
-	LEFT	= 4,	// ¶
-	RIGHT	= 8,	// ‰E
-};
+public:
+	static InputManager* GetInstance(){ return input_manager; }
 
-// ƒ{ƒ^ƒ“‚Ì“ü—Í
-enum Buttan
-{
-	NONE	= 0,	// –³
-	ON		= 1,	// ‰Ÿ‚³‚ê‚½uŠÔ
-	STAY	= 2,	// ‰Ÿ‚³‚ê‚Ä‚¢‚éó‘Ô
-	OUT		= 3,	// —£‚ê‚½uŠÔ
-};
+public:
+	struct Arrow
+	{
+		bool up;
+		bool down;
+		bool left;
+		bool right;
+	};
+	enum Buttan
+	{
+		None = 0,	// –³
+		On = 1,		// ‰Ÿ‚³‚ê‚½uŠÔ
+		Stay = 2,	// ‰Ÿ‚³‚ê‚Ä‚¢‚éó‘Ô
+		Out = 4,	// —£‚ê‚½uŠÔ
+	};
+	struct ButtanInput
+	{
+		Buttan	now_input;
+		Buttan	back_input;
+	};
+	struct X_Y
+	{
+		int x;
+		int y;
+	};
 
-struct InputData
-{
-	int Arrow;
-	Buttan A;
-	Buttan B;
+private:
+	Arrow		arrow;
+	ButtanInput	a;
+	ButtanInput	b;
+
+public:
+	void	Input();
+	Arrow	GetArrowInput(){ return arrow; }
+	Buttan	GetButtanInputA(){ return a.now_input; }
+	Buttan	GetButtanInputB(){ return b.now_input; }
+	X_Y		GetAxis();
 };

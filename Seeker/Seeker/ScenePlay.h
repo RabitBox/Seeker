@@ -1,20 +1,24 @@
 #pragma once
 #include <vector>
+#include <algorithm>
 #include "SceneBase.h"
 #include "Objects.h"
+#include "StageDemo.h"
+using namespace std;
 
 class ScenePlay : public SceneBace
 {
-private:
+/*private:
 	enum MapId
 	{
 		none		= 0,
 		tinytim		= 1,
 		stone_floor	= 2,
-	};
+	};//*/
 
 private:
-	std::vector < std::unique_ptr<Acter> > objects;
+	//vector < unique_ptr<Acter> > objects;//*/
+	StageBase* stage;
 
 public:
 	ScenePlay();
@@ -25,7 +29,7 @@ public:
 	virtual void Draw() override;
 
 private:
-	void LoadMapData();
-	void MapSet(int map_array[]);
-	void CreateObject(int obj_id, int x, int y, int f_x, int f_y);
+	//void LoadMapData();
+	//void MapSet(int map_array[]);
+	//void CreateObject(int obj_id, int x, int y, int f_x, int f_y);//*/
 };

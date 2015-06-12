@@ -1,6 +1,7 @@
 #include "Application.h"
 #include "DxLib.h"
 #include "Generic.h"
+#include "InputManager.h"
 
 Application::Application()
 {
@@ -16,11 +17,16 @@ void Application::AppMain()
 {
 	while (!CheckHitKey(KEY_INPUT_ESCAPE) || ProcessMessage() == -1)
 	{
-		ClearDrawScreen();
 		fps.Update();		// FPS‚ÌƒYƒŒ‚ğŒv‘ª
+
+		ClearDrawScreen();
+
+		InputManager::GetInstance() -> Input();
+
 		scene->Input();
 		scene->Update();
 		scene->Draw();
+		
 		fps.Wait();			// ƒYƒŒ‚ğC³
 	}
 	return;

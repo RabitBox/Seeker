@@ -1,9 +1,11 @@
 #include "Command.h"
+#include "DxLib.h"
 
 Command::Command(int _data_length) : index(0)
 {
 	for (int i = 0; i < HISTRY_LENGTH; i++){ histry[i] = Direction::NONE; }
 	data = new Data[_data_length];
+	data_num = _data_length;
 }
 
 //--------------------------------------------------
@@ -21,12 +23,13 @@ void Command::Set(int _index, int _length, int _limit, int _input[])
 
 //--------------------------------------------------
 // histry[] に入力情報を入れる
-void Command::Input(bool _up, bool _down, bool _left, bool _right)
+int Command::Input(bool _up, bool _down, bool _left, bool _right)
 {
 	histry[index] = (_up ? UP : NONE) |
 		(_down ? DOWN : NONE) |
 		(_left ? LEFT : NONE) |
 		(_right ? RIGHT : NONE);
+	return histry[index];
 }
 
 //--------------------------------------------------
@@ -35,9 +38,9 @@ int Command::Check()
 {
 	// for文で使う変数をfor文を使う前に宣言する
 	int c, j, i;
-
+	
 	// コマンドの種類だけfor文を回す
-	for (c = 0; c < sizeof(data) / sizeof(data[0]); c++)
+	for (c = 0; c < data_num; c++)
 	{
 		// iとjをここで初期化し、使えるようにする
 		for (i = 0, j = data[c].length - 1; j >= 0; j--)
@@ -74,11 +77,11 @@ int Command::Check()
 
 	// コマンドが成立している場合
 	// つまり c が data[] の要素数より小さい場合
-	if (c < sizeof(data) / sizeof(data[0])) 
+	if (c < data_num)
 	{
 		return c;	// c の値を返す
 	}
-
+	//DrawFormatString(0, 115, GetColor(255, 255, 255), "InputData:%d", data[1].limit);
 	// コマンドが未成立の場合
 	return -1;		// 不成立な値を返す
 }

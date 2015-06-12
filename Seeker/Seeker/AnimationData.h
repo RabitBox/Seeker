@@ -26,17 +26,18 @@ protected:
 	int					index;		// 描画を行うデータの添え字
 	bool				is_loop;	// ループするアニメーションか否か
 	const Vector3*		owner_pos;	// 所有者のポジションデータ
+	int					number;		// 登録された番号
+	bool				end_flag;	// 終了したか否か
 
 public:
 	Animation(){}
-	//Animation(int** texture_data, int* flame_data, bool loop);
-	//Animation(int** texture_data, const int flame_data[], const float x[], const float y[], const bool loop, const Vector3* pos);
-	//Animation(Data* data, int array_length, const bool loop, const Vector3* pos);
-	Animation(TextureData* _texture_data, int _t_length, IndexData* _index_data, int _i_length, bool _loop, const Vector3* _pos);
+	Animation(TextureData* _texture_data, int _t_length, IndexData* _index_data, int _i_length, bool _loop, const Vector3* _pos, int _number);
 	~Animation(){}
 
 public:
 	void Update();
+	void Update(int _state);
 	void Draw();
 	void Draw(int _turn);
+	bool GetEndFlag(){ return end_flag; }
 };

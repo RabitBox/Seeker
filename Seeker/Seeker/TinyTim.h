@@ -6,6 +6,8 @@
 #pragma once
 #include "Objects.h"
 #include "AnimationData.h"
+#include "InputManager.h"
+#include "Command.h"
 
 #define TimTexNum 37
 
@@ -21,6 +23,12 @@ private:
 		Land,	// 着地
 		All,
 	};
+	enum Look : int
+	{
+		RIGHT	= 1,
+		LEFT	= -1,
+
+	};
 
 	struct  AnimState
 	{
@@ -29,18 +37,22 @@ private:
 	};
 
 	State					state;
+	State					next_state;
 	vector<int*>			images;
 	AnimState				anim_state[(int)State::All];
-	//vector<Animation>		anim_data;
-	Animation anim;
+	vector<Animation>		anim_data;
+	Look					look;
+	Vector3					vly;
+	Command					command;
 
 public:
-	TinyTim();
+	TinyTim(){}
 	TinyTim(float x, float y);
 	TinyTim(float x, float y, float z);
 	TinyTim(Vector3 _positon);
-	virtual ~TinyTim();
+	virtual ~TinyTim(){}
 
+	void Input() override;
 	void Update() override;
 	void Draw() override;
 
@@ -53,7 +65,16 @@ private:
 
 private:
 	void LoadTexture() override;
+	void CommandSet();
 	void AnimationSet();
 	void AnimStateSet();
 	void Default();
+
+private:
+	// アニメーション系
+	void StandAnimSet();
+	void WalkAnimSet();
+	void RunAnimSet();
+	void JumpAnimSet();
+	void LandAnimSet();
 };

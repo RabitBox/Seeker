@@ -49,7 +49,8 @@ Animation::Animation(TextureData* _texture_data,
 	IndexData* _index_data,
 	int _i_length,
 	bool _loop,
-	const Vector3* _pos) : is_loop(_loop), owner_pos(_pos)
+	const Vector3* _pos,
+	int _number) : is_loop(_loop), owner_pos(_pos)
 {
 	for (int i = 0; i < _t_length; i++)
 	{
@@ -61,6 +62,8 @@ Animation::Animation(TextureData* _texture_data,
 	}
 	flame = 0;
 	index = 0;
+	number = _number;
+	end_flag = false;
 }
 
 void Animation::Update()
@@ -70,9 +73,40 @@ void Animation::Update()
 	if (flame < index_data[index_data.size() - 1].flame)
 	{
 		flame += 1;
-	} else 
+	}
+	else
 	{
 		if (is_loop)flame = 0;
+	}
+	for (int i = 0; i < index_data.size(); i++)
+	{
+		// その後判定→描画
+		if (flame < index_data[i].flame)
+		{
+			index = index_data[i].index;
+			break;
+		}
+	}
+}
+
+void Animation::Update(int _state)
+{
+	// 登録されている番号と不一致だった場合
+	if (number != _state) { 
+		flame = 0;	// フレームをリセットして
+		if (!is_loop) end_flag = false;
+		return;		// 処理を抜ける
+	}
+	// 超過しないように制御しつつflameを加算
+	// 最大フレーム量を超えていたらリセット(is_loopが有効な場合)
+	if (flame < index_data[index_data.size() - 1].flame)
+	{
+		flame += 1;
+	}
+	else
+	{
+		if (is_loop)flame = 0;
+		if (!is_loop) end_flag = true;
 	}
 	for (int i = 0; i < index_data.size(); i++)
 	{
@@ -102,11 +136,11 @@ void Animation::Draw()
 void Animation::Draw(int _turn)
 {
 	float s_x;
-	if (_turn == 1)
+	if (_turn > 0)
 	{
 		_turn = 0;
 		s_x = tex_data[index].t_x;
-	} else if (_turn == -1)
+	} else
 	{
 		_turn = 1;
 		s_x = 1.f - tex_data[index].t_x;

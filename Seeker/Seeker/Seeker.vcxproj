@@ -87,11 +87,14 @@
   <ItemGroup>
     <ClCompile Include="AnimationData.cpp" />
     <ClCompile Include="Application.cpp" />
+    <ClCompile Include="BackForest.cpp" />
     <ClCompile Include="Command.cpp" />
     <ClCompile Include="DxRaps.cpp" />
+    <ClCompile Include="InputManager.cpp" />
+    <ClCompile Include="StageBase.cpp" />
+    <ClCompile Include="StageDemo.cpp" />
     <ClCompile Include="StoneFloor.cpp" />
     <ClCompile Include="Generic.cpp" />
-    <ClCompile Include="InputManagerDemo.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="ScenePlay.cpp" />
     <ClCompile Include="TextureManager.cpp" />
@@ -100,21 +103,26 @@
   <ItemGroup>
     <ClInclude Include="AnimationData.h" />
     <ClInclude Include="Application.h" />
+    <ClInclude Include="BackForest.h" />
+    <ClInclude Include="Camera.h" />
+    <ClInclude Include="CollisionCheckers.h" />
     <ClInclude Include="CollisionManager.h" />
     <ClInclude Include="CollisionShapes.h" />
     <ClInclude Include="Command.h" />
     <ClInclude Include="DxRaps.h" />
+    <ClInclude Include="StageBase.h" />
+    <ClInclude Include="StageDemo.h" />
     <ClInclude Include="StoneFloor.h" />
     <ClInclude Include="Generic.h" />
     <ClInclude Include="TextureManager.h" />
     <ClInclude Include="InputManager.h" />
-    <ClInclude Include="InputManagerDemo.h" />
     <ClInclude Include="Objects.h" />
     <ClInclude Include="Particle_Rain.h" />
     <ClInclude Include="SceneBase.h" />
     <ClInclude Include="ScenePlay.h" />
     <ClInclude Include="TimeManager.h" />
     <ClInclude Include="TinyTim.h" />
+    <ClInclude Include="World.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
