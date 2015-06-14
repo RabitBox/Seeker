@@ -70,6 +70,24 @@
     <Filter Include="Objects\BackForest">
       <UniqueIdentifier>{9fdae780-1e24-44c8-b20c-b89e38238060}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Scene\Manager">
+      <UniqueIdentifier>{70cb936a-f7ad-4433-8b03-21f971840db2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scene\Demo">
+      <UniqueIdentifier>{cb387ba2-eb18-44c8-8e3c-cfd0cc01ebc7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scene\End">
+      <UniqueIdentifier>{2a161d58-855b-4e0c-84f4-b51aad70fa99}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scene\Pouse">
+      <UniqueIdentifier>{3c581184-0a7d-4aa5-87eb-5620fbdfb4e9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scene\Title">
+      <UniqueIdentifier>{218f2864-7912-4b4a-963a-4d9b293cb2d5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Command">
+      <UniqueIdentifier>{d1defda1-5889-46c6-9457-c786052fb7b7}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -99,9 +117,6 @@
     <ClCompile Include="Generic.cpp">
       <Filter>Generic</Filter>
     </ClCompile>
-    <ClCompile Include="Command.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
     <ClCompile Include="InputManager.cpp">
       <Filter>Input</Filter>
     </ClCompile>
@@ -113,6 +128,24 @@
     </ClCompile>
     <ClCompile Include="BackForest.cpp">
       <Filter>Objects\BackForest</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneManager.cpp">
+      <Filter>Scene\Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneEnd.cpp">
+      <Filter>Scene\End</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneDemo.cpp">
+      <Filter>Scene\Demo</Filter>
+    </ClCompile>
+    <ClCompile Include="ScenePouse.cpp">
+      <Filter>Scene\Pouse</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneTitle.cpp">
+      <Filter>Scene\Title</Filter>
+    </ClCompile>
+    <ClCompile Include="Command.cpp">
+      <Filter>Command</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -158,9 +191,6 @@
     <ClInclude Include="TimeManager.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
-    <ClInclude Include="Command.h">
-      <Filter>ヘッダー ファイル</Filter>
-    </ClInclude>
     <ClInclude Include="InputManager.h">
       <Filter>Input</Filter>
     </ClInclude>
@@ -181,6 +211,24 @@
     </ClInclude>
     <ClInclude Include="BackForest.h">
       <Filter>Objects\BackForest</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneManager.h">
+      <Filter>Scene\Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneEnd.h">
+      <Filter>Scene\End</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneDemo.h">
+      <Filter>Scene\Demo</Filter>
+    </ClInclude>
+    <ClInclude Include="ScenePouse.h">
+      <Filter>Scene\Pouse</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneTitle.h">
+      <Filter>Scene\Title</Filter>
+    </ClInclude>
+    <ClInclude Include="Command.h">
+      <Filter>Command</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

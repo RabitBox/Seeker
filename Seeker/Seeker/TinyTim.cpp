@@ -37,6 +37,8 @@ void TinyTim::Input()
 
 void TinyTim::Update()
 {
+	Input();
+
 	state = next_state;
 	int check = command.Check();
 	if (InputManager::GetInstance()->GetArrowInput().right && !InputManager::GetInstance()->GetArrowInput().left)	{

@@ -7,9 +7,11 @@ Application::Application()
 {
 	Initialize();
 	scene.reset(new ScenePlay());
+	stack_scene = SceneManager::GetInstance();
 }
 Application::~Application()
 {
+	stack_scene->Finalize();
 	DxLib_End();
 }
 
@@ -17,17 +19,23 @@ void Application::AppMain()
 {
 	while (!CheckHitKey(KEY_INPUT_ESCAPE) || ProcessMessage() == -1)
 	{
-		fps.Update();		// FPSのズレを計測
+		// FPSのズレを計測
+		fps.Update();
 
+		// 描画をリセット
 		ClearDrawScreen();
 
+		// 入力
 		InputManager::GetInstance() -> Input();
 
-		scene->Input();
+		// 更新
 		scene->Update();
+
+		// 描画
 		scene->Draw();
 		
-		fps.Wait();			// ズレを修正
+		// ズレを修正
+		fps.Wait();
 	}
 	return;
 }

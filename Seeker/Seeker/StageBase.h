@@ -25,7 +25,6 @@ protected:
 	float right_edge, left_edge;
 
 public:
-	void Input();
 	void Update();
 	void Draw();
 

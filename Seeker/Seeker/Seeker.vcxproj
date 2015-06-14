@@ -91,6 +91,11 @@
     <ClCompile Include="Command.cpp" />
     <ClCompile Include="DxRaps.cpp" />
     <ClCompile Include="InputManager.cpp" />
+    <ClCompile Include="SceneDemo.cpp" />
+    <ClCompile Include="SceneEnd.cpp" />
+    <ClCompile Include="SceneManager.cpp" />
+    <ClCompile Include="ScenePouse.cpp" />
+    <ClCompile Include="SceneTitle.cpp" />
     <ClCompile Include="StageBase.cpp" />
     <ClCompile Include="StageDemo.cpp" />
     <ClCompile Include="StoneFloor.cpp" />
@@ -110,6 +115,11 @@
     <ClInclude Include="CollisionShapes.h" />
     <ClInclude Include="Command.h" />
     <ClInclude Include="DxRaps.h" />
+    <ClInclude Include="SceneDemo.h" />
+    <ClInclude Include="SceneEnd.h" />
+    <ClInclude Include="SceneManager.h" />
+    <ClInclude Include="ScenePouse.h" />
+    <ClInclude Include="SceneTitle.h" />
     <ClInclude Include="StageBase.h" />
     <ClInclude Include="StageDemo.h" />
     <ClInclude Include="StoneFloor.h" />

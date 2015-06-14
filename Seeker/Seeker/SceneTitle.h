@@ -5,10 +5,9 @@
 class SceneTitle : public SceneBace
 {
 public:
-	SceneTitle();
-	virtual ~SceneTitle();
+	SceneTitle(){}
+	virtual ~SceneTitle(){}
 
-	virtual void Input() override;
-	virtual void Update() override;
-	virtual void Draw() override;
+	void Update() override;
+	void Draw() override;
 };

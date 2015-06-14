@@ -78,7 +78,7 @@ void Animation::Update()
 	{
 		if (is_loop)flame = 0;
 	}
-	for (int i = 0; i < index_data.size(); i++)
+	for (unsigned int i = 0; i < index_data.size(); i++)
 	{
 		// ‚»‚ÌŒã”»’è¨•`‰æ
 		if (flame < index_data[i].flame)
@@ -108,7 +108,7 @@ void Animation::Update(int _state)
 		if (is_loop)flame = 0;
 		if (!is_loop) end_flag = true;
 	}
-	for (int i = 0; i < index_data.size(); i++)
+	for (unsigned int i = 0; i < index_data.size(); i++)
 	{
 		// ‚»‚ÌŒã”»’è¨•`‰æ
 		if (flame < index_data[i].flame)

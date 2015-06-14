@@ -7,10 +7,9 @@
 class SceneDemo : public SceneBace
 {
 public:
-	SceneDemo();
-	virtual ~SceneDemo();
+	SceneDemo(){}
+	virtual ~SceneDemo(){}
 
-	virtual void Input() override;
 	virtual void Update() override;
 	virtual void Draw() override;
 };

@@ -15,11 +15,6 @@ ScenePlay::~ScenePlay()
 	delete stage;
 }
 
-void ScenePlay::Input()
-{
-	stage->Input();
-}
-
 void ScenePlay::Update()
 {
 	stage->Update();

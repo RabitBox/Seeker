@@ -5,14 +5,6 @@
 #define MAP_WIDTH	(20.f)
 #define MAP_HEIGHT	(20.f)
 
-void StageBase::Input()
-{
-	for (auto& var : objects)
-	{
-		var->Input();
-	}
-}
-
 void StageBase::Update()
 {
 	for (auto& var : objects)
@@ -52,7 +44,7 @@ void StageBase::MapSet(int map_array[])
 		}
 	}
 
-	EdgeSet((float)(0.f), (float)((map_array[1] - 1) * MAP_WIDTH));
+	EdgeSet((float)(0.f), (float)((map_array[1] - 2) * MAP_WIDTH));
 
 	camera = Camera(right_edge, left_edge);
 

@@ -24,11 +24,10 @@ public:
 	ScenePlay();
 	virtual ~ScenePlay();
 
-	virtual void Input() override;
 	virtual void Update() override;
 	virtual void Draw() override;
 
-private:
+//private:
 	//void LoadMapData();
 	//void MapSet(int map_array[]);
 	//void CreateObject(int obj_id, int x, int y, int f_x, int f_y);//*/
