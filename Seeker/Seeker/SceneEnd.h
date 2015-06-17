@@ -1,5 +1,6 @@
 // エンドシーン
 #pragma once
+#include "mleak.h"
 #include "SceneBase.h"
 
 class SceneEnd : public SceneBace

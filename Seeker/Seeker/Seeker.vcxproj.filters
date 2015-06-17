@@ -230,5 +230,8 @@
     <ClInclude Include="Command.h">
       <Filter>Command</Filter>
     </ClInclude>
+    <ClInclude Include="mleak.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

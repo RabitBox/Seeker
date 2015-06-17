@@ -2,48 +2,6 @@
 #include "DxLib.h"
 #include "DxRaps.h"
 
-/*Animation::Animation(int** texture_data,
-	int* flame_data,
-	bool loop)
-{
-	for (int i = 0; i < sizeof(flame_data)/sizeof(flame_data[0]); i++)
-	{
-		tex_data.push_back( { texture_data[i], flame_data[i], 0.5f, 0.5f } );
-	}
-	flame = 0;
-	index = 0;
-	is_loop = loop;
-}
-
-Animation::Animation(int** texture_data,
-	const int flame_data[],
-	const float x[],
-	const float y[],
-	const bool loop,
-	const Vector3* pos) : is_loop(loop), owner_pos(pos)
-{
-	for (int i = 0; i < sizeof(flame_data) / sizeof(flame_data[0]); i++)
-	{
-		tex_data.push_back({ texture_data[i], flame_data[i], x[i], y[i] });
-	}
-	flame = 0;
-	index = 0;
-	is_loop = loop;
-}//*/
-
-/*Animation::Animation(Data* data,
-	int array_length,
-	const bool loop,
-	const Vector3* pos) : is_loop(loop), owner_pos(pos)
-{
-	for (int i = 0; i < array_length; i++)
-	{
-		tex_data.push_back(data[i]);
-	}
-	flame = 0;
-	index = 0;
-}//*/
-
 Animation::Animation(TextureData* _texture_data,
 	int _t_length,
 	IndexData* _index_data,

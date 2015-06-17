@@ -27,6 +27,11 @@ TinyTim::TinyTim(Vector3 _position)
 	Default();
 }
 
+TinyTim::~TinyTim()
+{
+	
+}
+
 void TinyTim::Input()
 {
 	int i = command.Input(InputManager::GetInstance()->GetArrowInput().up,

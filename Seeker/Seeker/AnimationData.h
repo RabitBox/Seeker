@@ -1,6 +1,7 @@
 // アニメーション
 #pragma once
 #include <vector>
+#include "mleak.h"
 #include "Generic.h"
 using namespace std;
 

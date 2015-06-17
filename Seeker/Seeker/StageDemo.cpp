@@ -30,6 +30,7 @@ StageDemo::StageDemo()
 	sort(objects.begin(), objects.end(), [](const unique_ptr<Acter> &left, const unique_ptr<Acter> &right){
 		return left->GetId() > right->GetId();
 	});
+	camera.Target(Vector3(80.f,50.f));
 }
 
 StageDemo::~StageDemo()

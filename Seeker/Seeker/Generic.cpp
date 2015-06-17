@@ -1,8 +1,19 @@
+#include <vector>
 #include <windows.h>
 #include <math.h>
 #include <iostream>
 #include "Generic.h"
 #include "Dxlib.h"
+
+template<typename T>
+void DeleteElements(std::vector<T*>* vct)
+{
+	for (auto &var : *vct)
+	{
+		delete var;
+	}
+	*vct->clear();
+}
 
 //--------------------------------------------------
 // [name]

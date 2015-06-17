@@ -124,3 +124,12 @@ void DrawQuadPolygon(const Vector3 &c_pos,	// äÓì_ç¿ïW
 
 	DrawPolygonIndexed3D(vertex, 4, index, 2, graph_handle, trans_flag);
 }//*/
+
+void DrawGraphExtend(int x, int y, float ext, const int &graph_handle, const int &trans_flag)
+{
+	int SizeX, SizeY;
+	GetGraphSize(graph_handle, &SizeX, &SizeY);
+	SizeX = (int)((SizeX/2) * ext);
+	SizeY = (int)((SizeY/2) * ext);
+	DrawExtendGraph((x - SizeX), (y - SizeY), (x + SizeX), (y + SizeY), graph_handle, trans_flag);
+}

@@ -6,6 +6,7 @@
 #include <vector>
 #include <memory>
 #include "SceneBase.h"
+using namespace std;
 
 class SceneManager
 {
@@ -20,22 +21,32 @@ public:
 
 private:
 	static SceneManager* scene_manager;
-	SceneManager(){}
+	SceneManager(){ play_flag = true; }
+	~SceneManager();
 
 public:
 	static SceneManager* GetInstance(){ return scene_manager; }
 
 private:
-	std::vector<SceneBace*> scene;
+	vector<SceneBace*> scene;
+	bool play_flag;
 
 public:
+	static void Create();
+	static void Destroy();
 	void Update();
 	void Draw();
 
 public:
-	void Push(SCENE _type);
-	void Pop();
-	void GoTo(SCENE _type);
+	// シーン管理にまつわる関数
+	void B_Push(SCENE _type);
+	void B_Pop();
+	void B_GoTo(SCENE _type);
+	void F_Push(SCENE _type);
+	void F_Pop();
+	void F_GoTo(SCENE _type);
 
-	void Finalize();
+	// ゲームループの処理にまつわる関数
+	void EndCall(){ play_flag = false; }
+	bool EndFlag(){ return play_flag; }
 };

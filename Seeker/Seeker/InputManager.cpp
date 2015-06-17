@@ -1,5 +1,6 @@
 #include "DxLib.h"
 #include "InputManager.h"
+#include "SceneManager.h"
 
 //--------------------------------------------------
 // À‘Ô‚ÌéŒ¾
@@ -107,6 +108,8 @@ void InputManager::Input()
 		}
 	}
 	b.back_input = b.now_input;
+
+	//if (CheckHitKey(KEY_INPUT_ESCAPE)) SceneManager::GetInstance()->EndCall();
 }
 
 InputManager::X_Y InputManager::GetAxis()

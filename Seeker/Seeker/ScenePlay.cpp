@@ -1,4 +1,3 @@
-#include <memory>
 #include "DxLib.h"
 #include "ScenePlay.h"
 #include "TinyTim.h"
@@ -7,13 +6,10 @@ using namespace std;
 
 ScenePlay::ScenePlay()
 {
-	stage = new StageDemo();
+	stage = unique_ptr<StageBase>(new StageDemo());
 }
 
-ScenePlay::~ScenePlay()
-{
-	delete stage;
-}
+ScenePlay::~ScenePlay(){}
 
 void ScenePlay::Update()
 {

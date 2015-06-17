@@ -1,5 +1,6 @@
 #pragma once
 #include <vector>
+#include "mleak.h"
 #include "SceneBase.h"
 #include "Generic.h"
 

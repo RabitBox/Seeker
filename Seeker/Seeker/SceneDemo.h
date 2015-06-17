@@ -1,6 +1,7 @@
 // デモプレイ用クラス
 #pragma once
 #include <vector>
+#include "mleak.h"
 #include "SceneBase.h"
 #include "Generic.h"
 
@@ -10,6 +11,6 @@ public:
 	SceneDemo(){}
 	virtual ~SceneDemo(){}
 
-	virtual void Update() override;
-	virtual void Draw() override;
+	void Update() override;
+	void Draw() override;
 };

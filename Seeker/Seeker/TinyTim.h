@@ -50,7 +50,7 @@ public:
 	TinyTim(float x, float y);
 	TinyTim(float x, float y, float z);
 	TinyTim(Vector3 _positon);
-	virtual ~TinyTim(){}
+	virtual ~TinyTim();
 
 	void Input() override;
 	void Update() override;

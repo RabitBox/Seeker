@@ -66,7 +66,7 @@ void StageBase::CreateObject(int obj_id, int x, int y, int f_x, int f_y)
 
 	case (int)StageBase::MapId::tinytim:
 		// TinyTim‚Æ‡’v‚µ‚½ê‡
-		objects.push_back(unique_ptr<Acter>(new TinyTim(s_x, s_y, 0.f)));
+		objects.push_back(unique_ptr<Acter>(new TinyTim(s_x, s_y + 5.f, 0.f)));
 		break;
 
 	case (int)StageBase::MapId::stone_floor:

@@ -25,6 +25,10 @@ protected:
 	float right_edge, left_edge;
 
 public:
+	StageBase(){}
+	~StageBase(){ objects.clear(); }
+
+public:
 	void Update();
 	void Draw();
 
