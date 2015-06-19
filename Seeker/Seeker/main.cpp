@@ -1,3 +1,4 @@
+// 製作開始日 : 4/29
 // DXライブラリ + C++ で開発
 // Gai Takakura
 #include "Application.h"

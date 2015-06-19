@@ -2,14 +2,18 @@
 #include "DxLib.h"
 #include "Generic.h"
 #include "InputManager.h"
+#include "TextureManager.h"
 
 Application::Application()
 {
 	Initialize();
 	SceneManager::Create();
+	TextureManager::Create();
+
 #ifdef _DEBUG
 	//SceneManager::GetInstance()->B_Push(SceneManager::SCENE::PLAY);
 	SceneManager::GetInstance()->B_Push(SceneManager::SCENE::TITLE);
+	//SceneManager::GetInstance()->B_Push(SceneManager::SCENE::END);
 #else
 	SceneManager::GetInstance()->B_Push(SceneManager::SCENE::TITLE);
 #endif
@@ -17,6 +21,7 @@ Application::Application()
 Application::~Application()
 {
 	SceneManager::Destroy();
+	TextureManager::Destroy();
 	DxLib_End();
 }
 
@@ -26,13 +31,8 @@ void Application::AppMain()
 		&& (SceneManager::GetInstance()->EndFlag())
 		|| ProcessMessage() == -1)
 	{
-		DrawFormatString(0,105,GetColor(255,255,255),"ゲーム中");
-
 		// FPSのズレを計測
 		fps.Update();
-
-		// 描画をリセット
-		ClearDrawScreen();
 
 		// 入力
 		InputManager::GetInstance() -> Input();
@@ -42,8 +42,10 @@ void Application::AppMain()
 		SceneManager::GetInstance()->Update();
 
 		// 描画
-		//scene->Draw();
+		ClearDrawScreen();
+		SetDrawScreen(DX_SCREEN_BACK);
 		SceneManager::GetInstance()->Draw();
+		ScreenFlip();
 		
 		// ズレを修正
 		fps.Wait();

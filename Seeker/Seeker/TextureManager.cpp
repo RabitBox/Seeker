@@ -3,12 +3,25 @@
 //--------------------------------------------------
 // 実態の宣言
 //--------------------------------------------------
-TextureManager* TextureManager::texture_manager = new TextureManager();
+TextureManager* TextureManager::texture_manager = nullptr;
 
 //--------------------------------------------------
 // 外部使用関数
 //--------------------------------------------------
-// 
+// 使用開始時に呼ぶ
+void TextureManager::Create()
+{
+	texture_manager = new TextureManager();
+}
+
+// 使用終了時に呼ぶ
+void TextureManager::Destroy()
+{
+	delete texture_manager;
+	texture_manager = nullptr;
+}
+
+// 画像を登録し、その画像のアドレスを返す
 int* TextureManager::LoadTexture(char key[], int &texture)
 {
 	string name = key;

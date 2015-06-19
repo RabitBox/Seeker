@@ -12,16 +12,18 @@ class SceneManager
 {
 public:
 	enum SCENE{
-		DEMO,
+		DEMO,	// 今回未使用
 		TITLE,
 		PLAY,
 		POUSE,
 		END,
+		CHANGE,
+		FADE,
 	};
 
 private:
 	static SceneManager* scene_manager;
-	SceneManager(){ play_flag = true; }
+	SceneManager();
 	~SceneManager();
 
 public:
@@ -29,6 +31,7 @@ public:
 
 private:
 	vector<SceneBace*> scene;
+	SCENE next_scene;
 	bool play_flag;
 
 public:
@@ -39,14 +42,28 @@ public:
 
 public:
 	// シーン管理にまつわる関数
+	// 後ろから要素を操作するタイプ
 	void B_Push(SCENE _type);
 	void B_Pop();
 	void B_GoTo(SCENE _type);
+	void B_Leave();
+	void B_Leave(int _num);
+
+	// 前から要素を操作するタイプ
 	void F_Push(SCENE _type);
 	void F_Pop();
 	void F_GoTo(SCENE _type);
+	void F_Leave();
+	void F_Leave(int _num);
 
-	// ゲームループの処理にまつわる関数
+	// 全部
+	void Clear();
+
+	// 次のシーンにまつわる関数
+	void NextSet(SCENE _type){ next_scene = _type; }
+	SCENE Next(){ return next_scene; }
+
+	// ループの処理にまつわる関数
 	void EndCall(){ play_flag = false; }
 	bool EndFlag(){ return play_flag; }
 };

@@ -17,6 +17,7 @@ public:
 		none = 0,
 		tinytim = 1,
 		stone_floor = 2,
+		wall = 3,
 	};
 
 protected:

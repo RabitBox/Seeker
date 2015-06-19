@@ -7,13 +7,19 @@ using namespace std;
 #include "ScenePlay.h"
 #include "ScenePouse.h"
 #include "SceneEnd.h"
+#include "SceneChange.h"
+#include "SceneFade.h"
 
 #include "DxLib.h"
 
-//--------------------------------------------------
-// 実態宣言
-//--------------------------------------------------
-SceneManager* SceneManager::scene_manager = nullptr;//new SceneManager();
+// 実態宣言 (どこかで Create() を呼ばないとnullptr のまま)
+SceneManager* SceneManager::scene_manager = nullptr;
+
+SceneManager::SceneManager()
+{
+	next_scene = SCENE::TITLE;
+	play_flag = true;
+}
 
 SceneManager::~SceneManager()
 {
@@ -23,13 +29,13 @@ SceneManager::~SceneManager()
 	}
 }
 
-// 使用開始時に呼ぶ
+// 使用開始時に呼ぶ (コンストラクタ)
 void SceneManager::Create()
 {
 	scene_manager = new SceneManager();
 }
 
-// 使用終了時に呼ぶ
+// 使用終了時に呼ぶ (デストラクタ)
 void SceneManager::Destroy()
 {
 	delete scene_manager;
@@ -46,6 +52,7 @@ void SceneManager::Update()
 	}	
 }
 
+// scene に登録されたシーンクラスの Draw を呼ぶ
 void SceneManager::Draw()
 {
 	DrawFormatString(0, 75, GetColor(255, 255, 255), "描画しました");
@@ -81,6 +88,14 @@ void SceneManager::B_Push(SCENE _type)
 	case SceneManager::END:
 		scene.push_back((new SceneEnd()));
 		break;
+
+	case SceneManager::CHANGE:
+		scene.push_back((new SceneChange()));
+		break;
+
+	case SceneManager::FADE:
+		scene.push_back((new SceneFade()));
+		break;
 	}
 }
 
@@ -102,6 +117,24 @@ void SceneManager::B_GoTo(SCENE _type)
 {
 	this->B_Pop();
 	this->B_Push(_type);
+}
+
+// 最後の要素以外を破棄する
+void SceneManager::B_Leave()
+{
+	while (scene.size()>1)
+	{
+		F_Pop();
+	}
+}
+
+// 引数で指定した数の要素を後ろから残して破棄する
+void SceneManager::B_Leave(int _num)
+{
+	while (scene.size()>_num)
+	{
+		F_Pop();
+	}
 }
 
 // 前から要素を入れる
@@ -132,6 +165,14 @@ void SceneManager::F_Push(SCENE _type)
 	case SceneManager::END:
 		scene.insert(itr, (new SceneEnd()));
 		break;
+
+	case SceneManager::CHANGE:
+		scene.insert(itr, (new SceneChange()));
+		break;
+
+	case SceneManager::FADE:
+		scene.insert(itr, (new SceneFade()));
+		break;
 	}
 }
 
@@ -154,4 +195,31 @@ void SceneManager::F_GoTo(SCENE _type)
 {
 	F_Pop();
 	F_Push(_type);
+}
+
+// 最初の要素以外を破棄する
+void SceneManager::F_Leave()
+{
+	while (scene.size()>1)
+	{
+		B_Pop();
+	}
+}
+
+// 引数で指定した数の要素を前から残して破棄する
+void SceneManager::F_Leave(int _num)
+{
+	while (scene.size()>_num)
+	{
+		B_Pop();
+	}
+}
+
+// 全ての要素を破棄する
+void SceneManager::Clear()
+{
+	for (vector<SceneBace*>::iterator itr = scene.begin(); itr != scene.end(); itr++)
+	{
+		delete (*itr);
+	}
 }

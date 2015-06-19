@@ -16,9 +16,6 @@
     <Filter Include="Scene">
       <UniqueIdentifier>{09e362b8-1e66-4c79-974b-c757c62085e0}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Scene\PlayGame">
-      <UniqueIdentifier>{05836f77-367d-4fba-9d9b-f1cbb771d950}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Generic">
       <UniqueIdentifier>{27f136cf-468c-4edf-acc6-3825ec5207dc}</UniqueIdentifier>
     </Filter>
@@ -58,12 +55,6 @@
     <Filter Include="Stage">
       <UniqueIdentifier>{a48a7778-b9d7-4f35-903b-ab0be58f1397}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Stage\Base">
-      <UniqueIdentifier>{16ed27ef-380b-43be-a9aa-75ee3475d5eb}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Stage\Demo">
-      <UniqueIdentifier>{d3a18863-24f2-4e01-ae98-46f1beb37213}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Camera">
       <UniqueIdentifier>{ead61f4d-ce64-4068-b3bf-6f951ca65d87}</UniqueIdentifier>
     </Filter>
@@ -72,18 +63,6 @@
     </Filter>
     <Filter Include="Scene\Manager">
       <UniqueIdentifier>{70cb936a-f7ad-4433-8b03-21f971840db2}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Scene\Demo">
-      <UniqueIdentifier>{cb387ba2-eb18-44c8-8e3c-cfd0cc01ebc7}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Scene\End">
-      <UniqueIdentifier>{2a161d58-855b-4e0c-84f4-b51aad70fa99}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Scene\Pouse">
-      <UniqueIdentifier>{3c581184-0a7d-4aa5-87eb-5620fbdfb4e9}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Scene\Title">
-      <UniqueIdentifier>{218f2864-7912-4b4a-963a-4d9b293cb2d5}</UniqueIdentifier>
     </Filter>
     <Filter Include="Command">
       <UniqueIdentifier>{d1defda1-5889-46c6-9457-c786052fb7b7}</UniqueIdentifier>
@@ -95,9 +74,6 @@
     </ClCompile>
     <ClCompile Include="TinyTim.cpp">
       <Filter>Objects\TinyTim</Filter>
-    </ClCompile>
-    <ClCompile Include="ScenePlay.cpp">
-      <Filter>Scene\PlayGame</Filter>
     </ClCompile>
     <ClCompile Include="StoneFloor.cpp">
       <Filter>Objects\StoneFloor</Filter>
@@ -120,32 +96,41 @@
     <ClCompile Include="InputManager.cpp">
       <Filter>Input</Filter>
     </ClCompile>
-    <ClCompile Include="StageBase.cpp">
-      <Filter>Stage\Base</Filter>
-    </ClCompile>
-    <ClCompile Include="StageDemo.cpp">
-      <Filter>Stage\Demo</Filter>
-    </ClCompile>
     <ClCompile Include="BackForest.cpp">
       <Filter>Objects\BackForest</Filter>
+    </ClCompile>
+    <ClCompile Include="Command.cpp">
+      <Filter>Command</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneChange.cpp">
+      <Filter>Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneDemo.cpp">
+      <Filter>Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneEnd.cpp">
+      <Filter>Scene</Filter>
     </ClCompile>
     <ClCompile Include="SceneManager.cpp">
       <Filter>Scene\Manager</Filter>
     </ClCompile>
-    <ClCompile Include="SceneEnd.cpp">
-      <Filter>Scene\End</Filter>
-    </ClCompile>
-    <ClCompile Include="SceneDemo.cpp">
-      <Filter>Scene\Demo</Filter>
-    </ClCompile>
-    <ClCompile Include="ScenePouse.cpp">
-      <Filter>Scene\Pouse</Filter>
+    <ClCompile Include="ScenePlay.cpp">
+      <Filter>Scene</Filter>
     </ClCompile>
     <ClCompile Include="SceneTitle.cpp">
-      <Filter>Scene\Title</Filter>
+      <Filter>Scene</Filter>
     </ClCompile>
-    <ClCompile Include="Command.cpp">
-      <Filter>Command</Filter>
+    <ClCompile Include="ScenePouse.cpp">
+      <Filter>Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneFade.cpp">
+      <Filter>Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="StageBase.cpp">
+      <Filter>Stage</Filter>
+    </ClCompile>
+    <ClCompile Include="StageDemo.cpp">
+      <Filter>Stage</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -157,9 +142,6 @@
     </ClInclude>
     <ClInclude Include="Particle_Rain.h">
       <Filter>Particle\Rain</Filter>
-    </ClInclude>
-    <ClInclude Include="ScenePlay.h">
-      <Filter>Scene\PlayGame</Filter>
     </ClInclude>
     <ClInclude Include="TextureManager.h">
       <Filter>TextureManager</Filter>
@@ -200,38 +182,47 @@
     <ClInclude Include="CollisionCheckers.h">
       <Filter>CollisionManager</Filter>
     </ClInclude>
-    <ClInclude Include="StageBase.h">
-      <Filter>Stage\Base</Filter>
-    </ClInclude>
-    <ClInclude Include="StageDemo.h">
-      <Filter>Stage\Demo</Filter>
-    </ClInclude>
     <ClInclude Include="Camera.h">
       <Filter>Camera</Filter>
     </ClInclude>
     <ClInclude Include="BackForest.h">
       <Filter>Objects\BackForest</Filter>
     </ClInclude>
-    <ClInclude Include="SceneManager.h">
-      <Filter>Scene\Manager</Filter>
-    </ClInclude>
-    <ClInclude Include="SceneEnd.h">
-      <Filter>Scene\End</Filter>
-    </ClInclude>
-    <ClInclude Include="SceneDemo.h">
-      <Filter>Scene\Demo</Filter>
-    </ClInclude>
-    <ClInclude Include="ScenePouse.h">
-      <Filter>Scene\Pouse</Filter>
-    </ClInclude>
-    <ClInclude Include="SceneTitle.h">
-      <Filter>Scene\Title</Filter>
-    </ClInclude>
     <ClInclude Include="Command.h">
       <Filter>Command</Filter>
     </ClInclude>
     <ClInclude Include="mleak.h">
       <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneChange.h">
+      <Filter>Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneDemo.h">
+      <Filter>Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneEnd.h">
+      <Filter>Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneManager.h">
+      <Filter>Scene\Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="ScenePlay.h">
+      <Filter>Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneTitle.h">
+      <Filter>Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="ScenePouse.h">
+      <Filter>Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneFade.h">
+      <Filter>Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="StageBase.h">
+      <Filter>Stage</Filter>
+    </ClInclude>
+    <ClInclude Include="StageDemo.h">
+      <Filter>Stage</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

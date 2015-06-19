@@ -5,8 +5,12 @@
 
 class SceneEnd : public SceneBace
 {
+private:
+	int* images;
+	int time;
+
 public:
-	SceneEnd(){}
+	SceneEnd();
 	virtual ~SceneEnd(){}
 
 	virtual void Update() override;

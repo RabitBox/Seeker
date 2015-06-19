@@ -91,8 +91,10 @@
     <ClCompile Include="Command.cpp" />
     <ClCompile Include="DxRaps.cpp" />
     <ClCompile Include="InputManager.cpp" />
+    <ClCompile Include="SceneChange.cpp" />
     <ClCompile Include="SceneDemo.cpp" />
     <ClCompile Include="SceneEnd.cpp" />
+    <ClCompile Include="SceneFade.cpp" />
     <ClCompile Include="SceneManager.cpp" />
     <ClCompile Include="ScenePouse.cpp" />
     <ClCompile Include="SceneTitle.cpp" />
@@ -116,8 +118,10 @@
     <ClInclude Include="Command.h" />
     <ClInclude Include="DxRaps.h" />
     <ClInclude Include="mleak.h" />
+    <ClInclude Include="SceneChange.h" />
     <ClInclude Include="SceneDemo.h" />
     <ClInclude Include="SceneEnd.h" />
+    <ClInclude Include="SceneFade.h" />
     <ClInclude Include="SceneManager.h" />
     <ClInclude Include="ScenePouse.h" />
     <ClInclude Include="SceneTitle.h" />

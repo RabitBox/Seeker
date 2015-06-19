@@ -20,6 +20,9 @@ public:
 	static TextureManager* GetInstance(){ return texture_manager; }
 
 public:
+	static void Create();
+	static void Destroy();
+
 	int*	LoadTexture(char key[], int &texture);
 	void	EraceTexture(char key[]);
 	int		GetSize();

@@ -47,6 +47,7 @@ void SceneTitle::Update()
 }
 void SceneTitle::Draw()
 {	
+	SetDrawBright(255, 255, 255);
 	Now_ModeDraw();
 
 #ifdef _DEBUG
@@ -70,12 +71,15 @@ void SceneTitle::Now_Select()
 	switch (select)
 	{
 	case Select::PLAY_GAME:
-		if (input->GetButtanInputA()) return;
+		if (input->GetButtanInputA() == InputManager::Buttan::On) {
+			SceneManager::GetInstance()->NextSet(SceneManager::PLAY);
+			SceneManager::GetInstance()->B_Push(SceneManager::FADE);
+		}
 		if (input->GetArrowInput().down) select = Select::END_GAME;
 		break;
 
 	case Select::END_GAME:
-		if (input->GetButtanInputA()) SceneManager::GetInstance()->EndCall();
+		if (input->GetButtanInputA() == InputManager::Buttan::On) SceneManager::GetInstance()->EndCall();
 		if (input->GetArrowInput().up) select = Select::PLAY_GAME;
 		break;
 	}
