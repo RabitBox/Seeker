@@ -159,10 +159,14 @@ private:
 	// Function
 	static float Compensate(float value){ if (value < 0.0f || value >= 360.0f) { value += (float)((value / 360.0f) * 360.0f); } return value; }
 };
-/*template<class T>class Singleton
-{
-	//http://cflat-inc.hatenablog.com/entry/2014/03/04/214608
-};//*/
+class Noncopyable {
+public:
+	Noncopyable() {}
+
+private:
+	void operator =(const Noncopyable& src) {}
+	Noncopyable(const Noncopyable& src) {}
+};
 
 //======================================================================//
 // Advance Classes

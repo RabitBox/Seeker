@@ -100,12 +100,14 @@
     <ClCompile Include="SceneTitle.cpp" />
     <ClCompile Include="StageBase.cpp" />
     <ClCompile Include="StageDemo.cpp" />
+    <ClCompile Include="StoneBlock.cpp" />
     <ClCompile Include="StoneFloor.cpp" />
     <ClCompile Include="Generic.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="ScenePlay.cpp" />
     <ClCompile Include="TextureManager.cpp" />
     <ClCompile Include="TinyTim.cpp" />
+    <ClCompile Include="Wall.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AnimationData.h" />
@@ -127,6 +129,7 @@
     <ClInclude Include="SceneTitle.h" />
     <ClInclude Include="StageBase.h" />
     <ClInclude Include="StageDemo.h" />
+    <ClInclude Include="StoneBlock.h" />
     <ClInclude Include="StoneFloor.h" />
     <ClInclude Include="Generic.h" />
     <ClInclude Include="TextureManager.h" />
@@ -137,6 +140,7 @@
     <ClInclude Include="ScenePlay.h" />
     <ClInclude Include="TimeManager.h" />
     <ClInclude Include="TinyTim.h" />
+    <ClInclude Include="Wall.h" />
     <ClInclude Include="World.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

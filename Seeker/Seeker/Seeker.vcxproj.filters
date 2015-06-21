@@ -31,12 +31,6 @@
     <Filter Include="Objects">
       <UniqueIdentifier>{b6757d82-3b73-45a2-83bd-fc3811457c72}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Objects\TinyTim">
-      <UniqueIdentifier>{92f625b5-a01a-402e-a74f-118cdd98aead}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Objects\StoneFloor">
-      <UniqueIdentifier>{e3c703a8-05e8-46d5-b4e2-849ac130afb6}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Particle">
       <UniqueIdentifier>{ef3ff4de-81f0-4b0c-8185-d34f98d5f11f}</UniqueIdentifier>
     </Filter>
@@ -71,12 +65,6 @@
   <ItemGroup>
     <ClCompile Include="main.cpp">
       <Filter>ソース ファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="TinyTim.cpp">
-      <Filter>Objects\TinyTim</Filter>
-    </ClCompile>
-    <ClCompile Include="StoneFloor.cpp">
-      <Filter>Objects\StoneFloor</Filter>
     </ClCompile>
     <ClCompile Include="TextureManager.cpp">
       <Filter>TextureManager</Filter>
@@ -132,13 +120,22 @@
     <ClCompile Include="StageDemo.cpp">
       <Filter>Stage</Filter>
     </ClCompile>
+    <ClCompile Include="StoneFloor.cpp">
+      <Filter>Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="TinyTim.cpp">
+      <Filter>Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="Wall.cpp">
+      <Filter>Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="StoneBlock.cpp">
+      <Filter>Objects</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="SceneBase.h">
       <Filter>Scene</Filter>
-    </ClInclude>
-    <ClInclude Include="TinyTim.h">
-      <Filter>Objects\TinyTim</Filter>
     </ClInclude>
     <ClInclude Include="Particle_Rain.h">
       <Filter>Particle\Rain</Filter>
@@ -148,9 +145,6 @@
     </ClInclude>
     <ClInclude Include="Objects.h">
       <Filter>Objects</Filter>
-    </ClInclude>
-    <ClInclude Include="StoneFloor.h">
-      <Filter>Objects\StoneFloor</Filter>
     </ClInclude>
     <ClInclude Include="AnimationData.h">
       <Filter>Animation</Filter>
@@ -223,6 +217,18 @@
     </ClInclude>
     <ClInclude Include="StageDemo.h">
       <Filter>Stage</Filter>
+    </ClInclude>
+    <ClInclude Include="StoneFloor.h">
+      <Filter>Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="TinyTim.h">
+      <Filter>Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="Wall.h">
+      <Filter>Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="StoneBlock.h">
+      <Filter>Objects</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -64,7 +64,7 @@ private:
 	//void Roll();	// ƒ[ƒŠƒ“ƒO
 
 private:
-	void LoadTexture() override;
+	void LoadTexture();// override;
 	void CommandSet();
 	void AnimationSet();
 	void AnimStateSet();

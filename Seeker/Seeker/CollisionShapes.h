@@ -1,5 +1,8 @@
-#pragma once
+#ifndef _COLLISION_SHAPE_
+#define _COLLISION_SHAPE_
+
 #include "Generic.h"
+#include "CollisionManager.h"
 
 class Shape
 {
@@ -13,8 +16,8 @@ public:
 
 protected:
 	TYPE			type;			// 形
-	bool			is_trigger;		// 物理衝突があるか否か true:なし false:あり
-	Shape**			looker;			// 自身のポインタを持っているもポインタへのポインタ
+	bool			is_trigger;		// 物理的衝突があるか否か true:なし false:あり
+	Shape***		looker;			// 自身のポインタを持っているポインタへのポインタ
 	Vector3			position;		// 中心座標
 	Vector3			scale;			// サイズ(直径)
 	const Vector3*	owner_position;	// 持ち主の座標
@@ -24,12 +27,12 @@ public:
 	virtual ~Shape(){}
 
 public:
-	TYPE	GetType(){ return type; }
-	bool	GetTrigger(){ return is_trigger; }
-	void	SetLookerPointer(Shape* _looker){ looker = &_looker; }
-	Shape**	GetLookerPointer(){ return looker; }
-	Vector3	GetPosition(){ return (position + *owner_position); }
-	Vector3	GetScale(){ return scale; }
+	TYPE		GetType(){ return type; }
+	bool		GetTrigger(){ return is_trigger; }
+	void		SetLookerPointer(Shape** _looker){ looker = &_looker; }
+	Shape***	GetLookerPointer(){ return looker; }
+	Vector3		GetPosition(){ return (position + *owner_position); }
+	Vector3		GetScale(){ return scale; }
 };
 
 class Rect : public Shape
@@ -37,12 +40,16 @@ class Rect : public Shape
 public:
 	Rect(bool _trigger, Vector3 _pos, Vector3 _scale, const Vector3 &_owner_pos)
 	{
+		// 設定
 		type = TYPE::RECT;
 		is_trigger = _trigger;
 		looker = nullptr;
 		position = _pos;
 		scale = _scale;
 		owner_position = &_owner_pos;
+
+		// マネージャに登録
+
 	}
 	~Rect(){}
 };
@@ -52,12 +59,16 @@ class Circle : public Shape
 public:
 	Circle(bool _trigger, Vector3 _pos, Vector3 _scale, const Vector3 &_owner_pos)
 	{
+		// 設定
 		type = TYPE::CIRCLE;
 		is_trigger = _trigger;
 		looker = nullptr;
 		position = _pos;
 		scale = _scale;
 		owner_position = &_owner_pos;
+
+		// 設定
+
 	}
 	~Circle(){}
 };
@@ -97,35 +108,6 @@ public:
 	Vector3		GetScale(){ return scale; }
 	Vector3		GetVelocity(){ return *owner_velocity; }
 	AVector3	GetRotation(){ return rotation; }
-};
-
-class Dot : public Shape
-{
-
-};
-
-class Box : public Shape
-{
-
-};
-
-class Sphere : public Shape
-{
-
-};
-
-class Rect : public Shape
-{
-public:
-	Rect(){}
-	Rect(int _id, const Vector3* _owner_pos, const Vector3& _pos, const Vector3& _scale)
-	{
-		type = TYPE::RECT;
-		id = _id;
-		owner_position = _owner_pos;
-		position = _pos;
-		scale = _scale;
-		rotation = { 0.f, 0.f, 0.f };
-	}
-	~Rect(){}
 };//*/
+
+#endif

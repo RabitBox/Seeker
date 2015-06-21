@@ -1,16 +1,16 @@
 #pragma once
 #include <map>
 #include "Generic.h"
+#include "CollisionManager.h"
 using namespace std;
 
 class Acter : public Object
 {
 public:
-	enum ObjID { Player, Floor, BackGround, };
+	enum ObjID { Player, Block, Floor, BackGround, Wall, };
 
 protected:
-	//enum ObjID { Player, Floor, BackGround, };
-	//static map<char*, int> loaded_image;
+	Shape* shape;
 	ObjID id;
 
 public:
@@ -23,5 +23,5 @@ public:
 
 
 protected:
-	virtual void LoadTexture(){}
+	//virtual void LoadTexture(){}
 };

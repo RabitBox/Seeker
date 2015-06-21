@@ -15,11 +15,6 @@ StoneFloor::StoneFloor(float x, float y, float z)
 	Default();
 	//LoadTexture();
 }
-/*StoneFloor::StoneFloor(Vector3 _position)
-{
-	this->transform.position = _position;
-	Default();
-}//*/
 //--------------------------------------------------
 
 void StoneFloor::Update()

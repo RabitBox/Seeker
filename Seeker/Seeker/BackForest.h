@@ -17,5 +17,5 @@ public:
 	void Draw() override;
 
 private:
-	void LoadTexture() override;
+	void LoadTexture();// override;
 };
