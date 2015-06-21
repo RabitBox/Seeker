@@ -132,6 +132,12 @@
     <ClCompile Include="StoneBlock.cpp">
       <Filter>Objects</Filter>
     </ClCompile>
+    <ClCompile Include="CollisionManager.cpp">
+      <Filter>CollisionManager</Filter>
+    </ClCompile>
+    <ClCompile Include="LostArticle.cpp">
+      <Filter>Objects</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="SceneBase.h">
@@ -228,6 +234,9 @@
       <Filter>Objects</Filter>
     </ClInclude>
     <ClInclude Include="StoneBlock.h">
+      <Filter>Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="LostArticle.h">
       <Filter>Objects</Filter>
     </ClInclude>
   </ItemGroup>

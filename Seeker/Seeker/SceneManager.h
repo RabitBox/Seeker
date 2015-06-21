@@ -47,14 +47,14 @@ public:
 	void B_Pop();
 	void B_GoTo(SCENE _type);
 	void B_Leave();
-	void B_Leave(int _num);
+	void B_Leave(unsigned int _num);
 
 	// 前から要素を操作するタイプ
 	void F_Push(SCENE _type);
 	void F_Pop();
 	void F_GoTo(SCENE _type);
 	void F_Leave();
-	void F_Leave(int _num);
+	void F_Leave(unsigned int _num);
 
 	// 全部
 	void Clear();

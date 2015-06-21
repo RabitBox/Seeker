@@ -88,9 +88,11 @@
     <ClCompile Include="AnimationData.cpp" />
     <ClCompile Include="Application.cpp" />
     <ClCompile Include="BackForest.cpp" />
+    <ClCompile Include="CollisionManager.cpp" />
     <ClCompile Include="Command.cpp" />
     <ClCompile Include="DxRaps.cpp" />
     <ClCompile Include="InputManager.cpp" />
+    <ClCompile Include="LostArticle.cpp" />
     <ClCompile Include="SceneChange.cpp" />
     <ClCompile Include="SceneDemo.cpp" />
     <ClCompile Include="SceneEnd.cpp" />
@@ -119,6 +121,7 @@
     <ClInclude Include="CollisionShapes.h" />
     <ClInclude Include="Command.h" />
     <ClInclude Include="DxRaps.h" />
+    <ClInclude Include="LostArticle.h" />
     <ClInclude Include="mleak.h" />
     <ClInclude Include="SceneChange.h" />
     <ClInclude Include="SceneDemo.h" />

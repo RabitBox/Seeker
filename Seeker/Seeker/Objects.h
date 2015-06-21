@@ -7,7 +7,7 @@ using namespace std;
 class Acter : public Object
 {
 public:
-	enum ObjID { Player, Block, Floor, BackGround, Wall, };
+	enum ObjID { Player, Block, Floor, BackGround, Wall, LostArticle, };
 
 protected:
 	Shape* shape;

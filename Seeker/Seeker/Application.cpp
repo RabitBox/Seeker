@@ -3,12 +3,14 @@
 #include "Generic.h"
 #include "InputManager.h"
 #include "TextureManager.h"
+#include "CollisionManager.h"
 
 Application::Application()
 {
 	Initialize();
 	SceneManager::Create();
 	TextureManager::Create();
+	CollisionManager::Create();
 
 #ifdef _DEBUG
 	//SceneManager::GetInstance()->B_Push(SceneManager::SCENE::PLAY);
@@ -22,6 +24,7 @@ Application::~Application()
 {
 	SceneManager::Destroy();
 	TextureManager::Destroy();
+	CollisionManager::Destroy();
 	DxLib_End();
 }
 

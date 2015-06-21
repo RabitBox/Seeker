@@ -129,7 +129,7 @@ void SceneManager::B_Leave()
 }
 
 // ˆø”‚Åw’è‚µ‚½”‚Ì—v‘f‚ğŒã‚ë‚©‚çc‚µ‚Ä”jŠü‚·‚é
-void SceneManager::B_Leave(int _num)
+void SceneManager::B_Leave(unsigned int _num)
 {
 	while (scene.size()>_num)
 	{
@@ -207,7 +207,7 @@ void SceneManager::F_Leave()
 }
 
 // ˆø”‚Åw’è‚µ‚½”‚Ì—v‘f‚ğ‘O‚©‚çc‚µ‚Ä”jŠü‚·‚é
-void SceneManager::F_Leave(int _num)
+void SceneManager::F_Leave(unsigned int _num)
 {
 	while (scene.size()>_num)
 	{

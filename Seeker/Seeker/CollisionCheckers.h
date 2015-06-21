@@ -8,12 +8,12 @@
 // コリジョンチェッカークラス(ベース)
 class CollisionChecker{
 public:
-	virtual ~CollisionChecker(){}							// デストラクタ(virtual)
+	virtual ~CollisionChecker(){}					// デストラクタ(virtual)
 	virtual bool Check(Shape* s1, Shape* s2) = 0;	// 判定(pure virtual)
 };
 
 // 矩形と矩形のコリジョンチェッカークラス
-class Rect_Rect : public CollisionChecker
+/*class Rect_Rect : public CollisionChecker
 {
 public:
 	Rect_Rect(){}
@@ -36,10 +36,10 @@ public:
 		}
 		return false;
 	}
-};
+};*/
 
 // 矩形と円のコリジョンチェッカークラス
-class Rect_Circle : public CollisionChecker
+/*class Rect_Circle : public CollisionChecker
 {
 public:
 	Rect_Circle(){}
@@ -48,10 +48,10 @@ public:
 	{
 		return false;
 	}
-};
+};*/
 
 // 円と円のコリジョンチェッカークラス
-class Circle_Circle : public CollisionChecker
+/*class Circle_Circle : public CollisionChecker
 {
 public:
 	Circle_Circle(){}
@@ -60,6 +60,6 @@ public:
 	{
 		return false;
 	}
-};
+};*/
 
 #endif
