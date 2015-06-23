@@ -31,6 +31,3 @@ Title : Seeker
 
 ÉçÉS
  http://www.flamingtext.com/All-Logos
-
-âJâπ
- http://commons.nicovideo.jp/
