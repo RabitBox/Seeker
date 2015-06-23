@@ -12,7 +12,7 @@ class SceneManager
 {
 public:
 	enum SCENE{
-		DEMO,	// 今回未使用
+		//DEMO,	// 今回未使用
 		TITLE,
 		PLAY,
 		POUSE,

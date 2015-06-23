@@ -18,12 +18,14 @@ public:
 		tinytim = 1,
 		stone_floor = 2,
 		wall = 3,
+		losts = 4,
 	};
 
 protected:
 	vector < unique_ptr<Acter> > objects;
 	Camera camera;
 	float right_edge, left_edge;
+	float right, left;
 
 public:
 	StageBase(){}

@@ -93,9 +93,6 @@
     <ClCompile Include="SceneChange.cpp">
       <Filter>Scene</Filter>
     </ClCompile>
-    <ClCompile Include="SceneDemo.cpp">
-      <Filter>Scene</Filter>
-    </ClCompile>
     <ClCompile Include="SceneEnd.cpp">
       <Filter>Scene</Filter>
     </ClCompile>
@@ -176,9 +173,6 @@
     <ClInclude Include="InputManager.h">
       <Filter>Input</Filter>
     </ClInclude>
-    <ClInclude Include="World.h">
-      <Filter>ヘッダー ファイル</Filter>
-    </ClInclude>
     <ClInclude Include="CollisionCheckers.h">
       <Filter>CollisionManager</Filter>
     </ClInclude>
@@ -195,9 +189,6 @@
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
     <ClInclude Include="SceneChange.h">
-      <Filter>Scene</Filter>
-    </ClInclude>
-    <ClInclude Include="SceneDemo.h">
       <Filter>Scene</Filter>
     </ClInclude>
     <ClInclude Include="SceneEnd.h">

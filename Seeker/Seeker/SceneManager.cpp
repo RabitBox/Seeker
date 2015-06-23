@@ -2,7 +2,6 @@
 using namespace std;
 
 // シーンのヘッダ
-#include "SceneDemo.h"
 #include "SceneTitle.h"
 #include "ScenePlay.h"
 #include "ScenePouse.h"
@@ -45,7 +44,7 @@ void SceneManager::Destroy()
 // scene の最終要素に登録されたシーンクラスの Update を呼ぶ
 void SceneManager::Update()
 {
-	DrawFormatString(0,60,GetColor(255,255,255),"更新しました");
+	//DrawFormatString(0,60,GetColor(255,255,255),"更新しました");
 	if (!scene.empty()){
 		vector<SceneBace*>::iterator itr = --scene.end();
 		(*itr)->Update();
@@ -55,7 +54,7 @@ void SceneManager::Update()
 // scene に登録されたシーンクラスの Draw を呼ぶ
 void SceneManager::Draw()
 {
-	DrawFormatString(0, 75, GetColor(255, 255, 255), "描画しました");
+	//DrawFormatString(0, 75, GetColor(255, 255, 255), "描画しました");
 	if (!scene.empty()){
 		for (auto &var : scene)
 		{
@@ -69,10 +68,6 @@ void SceneManager::B_Push(SCENE _type)
 {
 	switch (_type)
 	{
-	case SceneManager::DEMO:
-		scene.push_back((new SceneDemo()));
-		break;
-
 	case SceneManager::TITLE:
 		scene.push_back((new SceneTitle()));
 		break;
@@ -146,10 +141,6 @@ void SceneManager::F_Push(SCENE _type)
 	// イテレータの指す要素の前に新たな要素をねじ込む
 	switch (_type)
 	{
-	case SceneManager::DEMO:
-		scene.insert(itr, (new SceneDemo()));
-		break;
-
 	case SceneManager::TITLE:
 		scene.insert(itr, (new SceneTitle()));
 		break;

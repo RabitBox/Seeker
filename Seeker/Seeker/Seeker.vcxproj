@@ -94,7 +94,6 @@
     <ClCompile Include="InputManager.cpp" />
     <ClCompile Include="LostArticle.cpp" />
     <ClCompile Include="SceneChange.cpp" />
-    <ClCompile Include="SceneDemo.cpp" />
     <ClCompile Include="SceneEnd.cpp" />
     <ClCompile Include="SceneFade.cpp" />
     <ClCompile Include="SceneManager.cpp" />
@@ -124,7 +123,6 @@
     <ClInclude Include="LostArticle.h" />
     <ClInclude Include="mleak.h" />
     <ClInclude Include="SceneChange.h" />
-    <ClInclude Include="SceneDemo.h" />
     <ClInclude Include="SceneEnd.h" />
     <ClInclude Include="SceneFade.h" />
     <ClInclude Include="SceneManager.h" />
@@ -144,7 +142,6 @@
     <ClInclude Include="TimeManager.h" />
     <ClInclude Include="TinyTim.h" />
     <ClInclude Include="Wall.h" />
-    <ClInclude Include="World.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

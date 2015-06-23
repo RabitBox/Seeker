@@ -26,6 +26,8 @@ public:
 			position.x = pos.x;
 		}
 		position.z = pos.z;
-		SetCameraPositionAndTarget_UpVecY(VGet(position.x, position.y, position.z - 100.f), VGet(position.x, position.y, position.z));
+		/*SetCameraPositionAndTarget_UpVecY(
+			VGet(position.x, position.y, position.z - 100.f),
+			VGet(position.x, position.y, position.z));//*/
 	}
 };

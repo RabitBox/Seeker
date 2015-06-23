@@ -12,7 +12,6 @@ class ScenePlay : public SceneBace
 {
 protected:
 	unique_ptr<StageBase> stage;
-	//StageBase* stage;
 
 public:
 	ScenePlay();

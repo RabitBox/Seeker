@@ -10,7 +10,7 @@ public:
 	enum ObjID { Player, Block, Floor, BackGround, Wall, LostArticle, };
 
 protected:
-	Shape* shape;
+	Shape* shape = nullptr;
 	ObjID id;
 
 public:

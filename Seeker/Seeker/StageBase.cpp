@@ -1,6 +1,8 @@
 #include "StageBase.h"
 #include "TinyTim.h"
 #include "StoneFloor.h"
+#include "Wall.h"
+#include "LostArticle.h"
 
 #define MAP_WIDTH	(20.f)
 #define MAP_HEIGHT	(20.f)
@@ -12,9 +14,11 @@ void StageBase::Update()
 		var->Update();
 		if (var->GetId() == Acter::ObjID::Player)
 		{
-			camera.Target(var->GetPos());
+			//camera.Target(Vector3(80.f, 50.f));
+			//camera.Target(var->GetPos());
 		}
 	}
+	camera.Target(Vector3(80.f, 50.f));
 }
 
 void StageBase::Draw()
@@ -29,6 +33,8 @@ void StageBase::Draw()
 // データをCreateObjectに渡してオブジェクトを生成する
 void StageBase::MapSet(int map_array[])
 {
+	left = MAP_HEIGHT * 1;
+	right = MAP_HEIGHT * (map_array[1]-1);
 	int* map = new int[map_array[0] * map_array[1]];
 	for (int i = 0; i < map_array[0] * map_array[1]; i++)
 	{
@@ -66,12 +72,20 @@ void StageBase::CreateObject(int obj_id, int x, int y, int f_x, int f_y)
 
 	case (int)StageBase::MapId::tinytim:
 		// TinyTimと合致した場合
-		objects.push_back(unique_ptr<Acter>(new TinyTim(s_x, s_y + 5.f, 0.f)));
+		objects.push_back(unique_ptr<Acter>(new TinyTim(s_x, s_y + 5.f, 0.f, left, right)));
 		break;
 
 	case (int)StageBase::MapId::stone_floor:
 		// StoneFloorと合致した場合
 		objects.push_back(unique_ptr<Acter>(new StoneFloor(s_x, s_y, 0.f)));
+		break;
+
+	case (int)StageBase::MapId::wall:
+		objects.push_back(unique_ptr<Acter>(new Wall(s_x, s_y, 0.f)));
+		break;
+
+	case (int)StageBase::MapId::losts:
+		objects.push_back(unique_ptr<Acter>(new LostArticle(s_x, s_y, 0.f)));
 		break;
 	}
 }

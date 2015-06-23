@@ -45,23 +45,19 @@ private:
 	Vector3					vly;
 	Command					command;
 
+	float left, right;
+
 public:
 	TinyTim(){}
-	TinyTim(float x, float y);
+	//TinyTim(float x, float y);
 	TinyTim(float x, float y, float z);
-	TinyTim(Vector3 _positon);
+	TinyTim(float x, float y, float z, float l, float r);
+	//TinyTim(Vector3 _positon);
 	virtual ~TinyTim();
 
 	void Input() override;
 	void Update() override;
 	void Draw() override;
-
-private:
-	//void Walk();	// 歩く
-	//void Run();	// 走る
-	//void Jump();	// ジャンプ
-	//void Land();	// 着地
-	//void Roll();	// ローリング
 
 private:
 	void LoadTexture();// override;

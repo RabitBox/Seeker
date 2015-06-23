@@ -37,4 +37,7 @@ void StoneFloor::Default()
 
 	int dem_load = LoadGraph("Texture/StoneTile.png");
 	images = TextureManager::GetInstance()->LoadTexture("StoneTile", dem_load);
+
+	//shape = new Rect(false, Vector3(0.f, 0.f), transform.scale.Harf(), id, transform.position);
+	//CollisionManager::GetInstance()->PushData(shape);
 }

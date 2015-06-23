@@ -111,6 +111,10 @@ public:
 	{
 		float mag = 1 / norm3(); float _x = x * mag, _y = y * mag, _z = z * mag; return {_x, _y, _z};
 	}
+	Vector3 Harf()
+	{
+		return {(x/2), (y/2), (z/2)};
+	}
 
 private:
 	float norm3(){ return (float)std::sqrt((double)( x*x + y*y + z*z)); }

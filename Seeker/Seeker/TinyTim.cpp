@@ -3,33 +3,34 @@
 #include "DxRaps.h"
 #include "TinyTim.h"
 #include "TextureManager.h"
+#include "SceneManager.h"
 
 #define UNDER	0.3f
 #define WALK_SPEED	0.6f
 #define RUN_SPEED	1.2f
 const Vector3 GRAVITY = {0.f, -0.98f, 0.f};
 
-TinyTim::TinyTim(float x, float y)
-{
-	this->transform.position = { x, y - 10.f, 0.f };
-	Default();
-}
-
 TinyTim::TinyTim(float x, float y, float z)
 {
 	this->transform.position = { x, y - 10.f, z };
+	left = 0.f;
+	right = 500.f;
 	Default();
 }
 
-TinyTim::TinyTim(Vector3 _position)
+TinyTim::TinyTim(float x, float y, float z, float l, float r)
 {
-	this->transform.position = _position;
+	this->transform.position = { x, y - 10.f, z };
+	left = l;
+	right = r;
 	Default();
 }
 
 TinyTim::~TinyTim()
 {
-	
+	//CollisionManager::GetInstance()->PopData(id);
+	delete shape;
+	shape = nullptr;
 }
 
 void TinyTim::Input()
@@ -43,6 +44,12 @@ void TinyTim::Input()
 void TinyTim::Update()
 {
 	Input();
+
+	if (CollisionManager::GetInstance()->Check(true, id))
+	{
+		SceneManager::GetInstance()->NextSet(SceneManager::SCENE::END);
+		SceneManager::GetInstance()->B_Push(SceneManager::SCENE::FADE);
+	}//*/
 
 	state = next_state;
 	int check = command.Check();
@@ -130,6 +137,9 @@ void TinyTim::Update()
 		//anim_data[State::Land].Update();
 		break;
 	}*/
+
+	if (transform.position.x < left)transform.position.x = left;
+	if (transform.position.x > right)transform.position.x = right;
 }
 
 void TinyTim::Draw()
@@ -229,6 +239,8 @@ void TinyTim::Default()
 	this->transform.rotation = { 0.f, 0.f, 0.f };
 	look = Look::RIGHT;
 	vly = { 0.f, 0.f, 0.f };
+	shape = new Rect(false, Vector3(0.f, 0.f), transform.scale.Harf(), this->id, transform.position);
+	CollisionManager::GetInstance()->PushData(shape);
 	LoadTexture();
 	AnimationSet();
 	AnimStateSet();

@@ -3,7 +3,6 @@
 #define _COLLISION_SHAPE_
 
 #include "Generic.h"
-#include "CollisionManager.h"
 
 // コリジョンの形のベースクラス
 class Shape
@@ -20,8 +19,8 @@ protected:
 	TYPE			type;			// 形
 	bool			is_trigger;		// 物理的衝突があるか否か true:なし false:あり
 	Vector3			position;		// 中心座標
-	Vector3			scale;			// サイズ(直径)
-	const int*		owner_id;		// 持ち主のID
+	Vector3			scale;			// サイズ
+	int				owner_id;		// 持ち主のID
 	const Vector3*	owner_position;	// 持ち主の座標
 
 public:
@@ -33,7 +32,7 @@ public:
 	bool		GetTrigger(){ return is_trigger; }
 	Vector3		GetPosition(){ return (position + *owner_position); }
 	Vector3		GetScale(){ return scale; }
-	int			GetID(){ return *owner_id; }
+	int			GetID(){ return owner_id; }
 };
 
 // 矩形型コリジョンクラス
@@ -47,7 +46,7 @@ public:
 		is_trigger = _trigger;
 		position = _pos;
 		scale = _scale;
-		owner_id = &_id;
+		owner_id = _id;
 		owner_position = &_owner_pos;
 
 		// マネージャに登録
@@ -70,7 +69,7 @@ public:
 		is_trigger = _trigger;
 		position = _pos;
 		scale = _scale;
-		owner_id = &_id;
+		owner_id = _id;
 		owner_position = &_owner_pos;
 
 		// 設定

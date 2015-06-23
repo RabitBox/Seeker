@@ -13,8 +13,8 @@ Application::Application()
 	CollisionManager::Create();
 
 #ifdef _DEBUG
-	//SceneManager::GetInstance()->B_Push(SceneManager::SCENE::PLAY);
-	SceneManager::GetInstance()->B_Push(SceneManager::SCENE::TITLE);
+	SceneManager::GetInstance()->B_Push(SceneManager::SCENE::PLAY);
+	//SceneManager::GetInstance()->B_Push(SceneManager::SCENE::TITLE);
 	//SceneManager::GetInstance()->B_Push(SceneManager::SCENE::END);
 #else
 	SceneManager::GetInstance()->B_Push(SceneManager::SCENE::TITLE);
@@ -40,13 +40,13 @@ void Application::AppMain()
 		// “ü—Í
 		InputManager::GetInstance() -> Input();
 
+		ClearDrawScreen();
+		SetDrawScreen(DX_SCREEN_BACK);
+
 		// XV
-		//scene->Update();
 		SceneManager::GetInstance()->Update();
 
 		// •`‰æ
-		ClearDrawScreen();
-		SetDrawScreen(DX_SCREEN_BACK);
 		SceneManager::GetInstance()->Draw();
 		ScreenFlip();
 		

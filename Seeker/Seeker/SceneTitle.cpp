@@ -49,13 +49,6 @@ void SceneTitle::Draw()
 {	
 	SetDrawBright(255, 255, 255);
 	Now_ModeDraw();
-
-#ifdef _DEBUG
-	// パラメータ確認のため
-	DrawFormatString(0, 0, GetColor(255, 255, 255), "I'm Title");
-	DrawFormatString(0, 15, GetColor(255, 255, 255), "%d", mode);
-	DrawFormatString(0, 30, GetColor(255, 255, 255), "%d", select);
-#endif
 }
 
 void SceneTitle::Now_Wait()

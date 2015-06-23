@@ -11,6 +11,9 @@ StoneBlock::StoneBlock(float x, float y, float z)
 
 	int dem_load = LoadGraph("Texture/StoneTile.png");
 	image = TextureManager::GetInstance()->LoadTexture("StoneTile", dem_load);
+
+	//shape = new Rect(false, Vector3(0.f, 0.f), transform.scale.Harf(), id, transform.position);
+	//CollisionManager::GetInstance()->PushData(shape);
 }
 
 void StoneBlock::Draw()
