@@ -25,6 +25,7 @@ private:
 public:
 	void PushData(Shape* _shape){ collisions.push_back(_shape); }	// 
 	void PopData(int _id);
+	void Clear();
 
 	bool Check(bool _trigger, int _owner_id)
 	{

@@ -15,6 +15,7 @@ int test_map_data[] = {
 
 StageDemo::StageDemo()
 {
+	MapSet(test_map_data);
 	for (int i = 0; i < 3; i++)
 	{
 		float x = (float)(left_edge + 40.f + (i * 160.f));
@@ -26,11 +27,9 @@ StageDemo::StageDemo()
 			objects.push_back(unique_ptr<Acter>(new BackForest(x, 60.f, -10.f, false)));
 		}
 	}
-	MapSet(test_map_data);
 	sort(objects.begin(), objects.end(), [](const unique_ptr<Acter> &left, const unique_ptr<Acter> &right){
 		return left->GetId() > right->GetId();
 	});
-	//camera.Target(Vector3(80.f,50.f));
 }
 
 StageDemo::~StageDemo()

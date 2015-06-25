@@ -20,8 +20,4 @@ public:
 	virtual void Input(){}
 
 	int GetId(){ return (int)id; }
-
-
-protected:
-	//virtual void LoadTexture(){}
 };

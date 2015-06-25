@@ -7,7 +7,7 @@
 #include <vector>
 #include <algorithm>
 #include "Objects.h"
-#include "Camera.h"
+#include "PlayCamera.h"
 
 class StageBase
 {
@@ -23,7 +23,8 @@ public:
 
 protected:
 	vector < unique_ptr<Acter> > objects;
-	Camera camera;
+	//Camera camera;
+	PlayCamera p_camera;
 	float right_edge, left_edge;
 	float right, left;
 
@@ -40,6 +41,4 @@ public:
 	void	BackSet(){}
 	void	MapSet(int map_array[]);
 	void	CreateObject(int obj_id, int x, int y, int f_x, int f_y);
-	float	GetRight(){ return right_edge; }
-	float	GetLeft(){ return left_edge; }
 };

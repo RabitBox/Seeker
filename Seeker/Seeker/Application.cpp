@@ -4,6 +4,7 @@
 #include "InputManager.h"
 #include "TextureManager.h"
 #include "CollisionManager.h"
+#include "InputManager.h"
 
 Application::Application()
 {
@@ -11,6 +12,7 @@ Application::Application()
 	SceneManager::Create();
 	TextureManager::Create();
 	CollisionManager::Create();
+	InputManager::Create();
 
 #ifdef _DEBUG
 	SceneManager::GetInstance()->B_Push(SceneManager::SCENE::PLAY);
@@ -25,6 +27,7 @@ Application::~Application()
 	SceneManager::Destroy();
 	TextureManager::Destroy();
 	CollisionManager::Destroy();
+	InputManager::Destroy();
 	DxLib_End();
 }
 

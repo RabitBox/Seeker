@@ -9,6 +9,8 @@ private:
 
 public:
 	static InputManager* GetInstance(){ return input_manager; }
+	static void Create();
+	static void Destroy();
 
 public:
 	struct Arrow

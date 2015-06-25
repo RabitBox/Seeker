@@ -5,7 +5,7 @@
 //--------------------------------------------------
 // À‘Ô‚ÌéŒ¾
 //--------------------------------------------------
-InputManager* InputManager::input_manager = new InputManager();
+InputManager* InputManager::input_manager = nullptr;
 
 InputManager::InputManager()
 {
@@ -17,6 +17,16 @@ InputManager::InputManager()
 	a.back_input	= Buttan::None;
 	b.now_input		= Buttan::None;
 	b.back_input	= Buttan::None;
+}
+
+void InputManager::Create()
+{
+	input_manager = new InputManager();
+}
+
+void InputManager::Destroy()
+{
+	delete input_manager;
 }
 
 void InputManager::Input()

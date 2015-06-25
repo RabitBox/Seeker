@@ -2,6 +2,8 @@
 
 class SceneBace
 {
+
+
 public:
 	virtual ~SceneBace(){}
 

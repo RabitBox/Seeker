@@ -9,8 +9,6 @@ using namespace std;
 #include "SceneChange.h"
 #include "SceneFade.h"
 
-#include "DxLib.h"
-
 // 実態宣言 (どこかで Create() を呼ばないとnullptr のまま)
 SceneManager* SceneManager::scene_manager = nullptr;
 
@@ -44,7 +42,6 @@ void SceneManager::Destroy()
 // scene の最終要素に登録されたシーンクラスの Update を呼ぶ
 void SceneManager::Update()
 {
-	//DrawFormatString(0,60,GetColor(255,255,255),"更新しました");
 	if (!scene.empty()){
 		vector<SceneBace*>::iterator itr = --scene.end();
 		(*itr)->Update();
@@ -54,7 +51,6 @@ void SceneManager::Update()
 // scene に登録されたシーンクラスの Draw を呼ぶ
 void SceneManager::Draw()
 {
-	//DrawFormatString(0, 75, GetColor(255, 255, 255), "描画しました");
 	if (!scene.empty()){
 		for (auto &var : scene)
 		{

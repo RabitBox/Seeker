@@ -1,6 +1,6 @@
 #include "BackForest.h"
 #include "DxLib.h"
-#include"TextureManager.h"
+#include "TextureManager.h"
 #include "DxRaps.h"
 
 BackForest::BackForest(float x, float y, float z, bool turn)
@@ -15,17 +15,17 @@ BackForest::BackForest(float x, float y, float z, bool turn)
 
 void BackForest::Draw()
 {
+	//DrawFormatString(0, 0, GetColor(255, 255, 255), "”wŒi‚ð•`‰æ‚µ‚æ‚¤‚æI");
 	if (turn_flag){
 		DrawBillboard3D(VGetRap(transform.position),
 			0.5f, 0.5f, 160.f, 0.f,
-			*images, TRUE, 0);
+			*images, FALSE, 0);
 	}
 	else{
 		DrawBillboard3D(VGetRap(transform.position),
 			0.5f, 0.5f, 160.f, 0.f,
-			*images, TRUE, 0);
+			*images, FALSE, 1);
 	}//*/
-	//DrawFormatString(0, 0, GetColor(255,255,255), "•`‰æ‚µ‚æ‚¤‚æI");
 	/*DrawQuadPolygon(this->transform.position,
 		this->transform.rotation,
 		this->transform.scale,

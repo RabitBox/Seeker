@@ -12,7 +12,6 @@ class SceneManager
 {
 public:
 	enum SCENE{
-		//DEMO,	// ç°âÒñ¢égóp
 		TITLE,
 		PLAY,
 		POUSE,

@@ -135,6 +135,9 @@
     <ClCompile Include="LostArticle.cpp">
       <Filter>Objects</Filter>
     </ClCompile>
+    <ClCompile Include="PlayCamera.cpp">
+      <Filter>Camera</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="SceneBase.h">
@@ -175,9 +178,6 @@
     </ClInclude>
     <ClInclude Include="CollisionCheckers.h">
       <Filter>CollisionManager</Filter>
-    </ClInclude>
-    <ClInclude Include="Camera.h">
-      <Filter>Camera</Filter>
     </ClInclude>
     <ClInclude Include="BackForest.h">
       <Filter>Objects\BackForest</Filter>
@@ -229,6 +229,9 @@
     </ClInclude>
     <ClInclude Include="LostArticle.h">
       <Filter>Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayCamera.h">
+      <Filter>Camera</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

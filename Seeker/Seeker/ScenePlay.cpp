@@ -2,6 +2,7 @@
 #include "ScenePlay.h"
 #include "TinyTim.h"
 #include "StoneFloor.h"
+#include "CollisionManager.h"
 using namespace std;
 
 ScenePlay::ScenePlay()
@@ -9,7 +10,10 @@ ScenePlay::ScenePlay()
 	stage = unique_ptr<StageBase>(new StageDemo());
 }
 
-ScenePlay::~ScenePlay(){}
+ScenePlay::~ScenePlay()
+{
+	CollisionManager::GetInstance()->Clear();
+}
 
 void ScenePlay::Update()
 {

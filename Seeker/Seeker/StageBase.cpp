@@ -14,15 +14,15 @@ void StageBase::Update()
 		var->Update();
 		if (var->GetId() == Acter::ObjID::Player)
 		{
-			//camera.Target(Vector3(80.f, 50.f));
-			//camera.Target(var->GetPos());
+			
+			p_camera.TargetSet(var->GetPos());
 		}
 	}
-	camera.Target(Vector3(80.f, 50.f));
 }
 
 void StageBase::Draw()
 {
+	p_camera.Target();
 	for (auto& var : objects)
 	{
 		var->Draw();
@@ -50,9 +50,10 @@ void StageBase::MapSet(int map_array[])
 		}
 	}
 
-	EdgeSet((float)(0.f), (float)((map_array[1] - 2) * MAP_WIDTH));
+	EdgeSet((float)(0.f), (float)((map_array[1] - 1) * MAP_WIDTH));
 
-	camera = Camera(right_edge, left_edge);
+	// ƒJƒƒ‰‰Šú‰»
+	p_camera = PlayCamera(right_edge, left_edge, Vector3(80.f, 50.f));
 
 	delete[] map;
 }
@@ -80,7 +81,7 @@ void StageBase::CreateObject(int obj_id, int x, int y, int f_x, int f_y)
 		objects.push_back(unique_ptr<Acter>(new StoneFloor(s_x, s_y, 0.f)));
 		break;
 
-	case (int)StageBase::MapId::wall:
+	case (int)StageBase::MapId::wall:	// –¢g—p
 		objects.push_back(unique_ptr<Acter>(new Wall(s_x, s_y, 0.f)));
 		break;
 

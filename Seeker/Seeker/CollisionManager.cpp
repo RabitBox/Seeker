@@ -17,3 +17,11 @@ void CollisionManager::PopData(int _i)
 		}
 	}
 }
+
+void CollisionManager::Clear()
+{
+	if (!collisions.empty())
+	{
+		collisions.clear();
+	}
+}

@@ -13,9 +13,8 @@ public:
 	~BackForest(){}
 
 public:
-	//void Update() override;
 	void Draw() override;
 
 private:
-	void LoadTexture();// override;
+	void LoadTexture();
 };
